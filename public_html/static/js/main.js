@@ -433,7 +433,7 @@ function makeIcon(title,location,description,id){
 	});
 
 	var image = {
-		url:staticLink+'assets/icons/icon-loc-'+id+'.png',
+		url:'/assets/icons/icon-loc-'+id+'.png',
 		size: new google.maps.Size(26, 47.5),
 		origin: new google.maps.Point(0,0),
 		anchor: new google.maps.Point(26,47.5),

@@ -749,6 +749,7 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/about-prt.jpg");
   width: 15em;
   height: 15em;
   -webkit-border-radius: 50%;
@@ -810,6 +811,7 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/about-bg-1.jpg");
 }
 /* line 399, ../sass/screen.scss */
 #about #background-image-container #background-2 {
@@ -835,6 +837,7 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/about-bg-2.jpg");
   -webkit-transform: skewX(45deg);
   transform: skewX(45deg);
 }
@@ -862,6 +865,7 @@ a {
   height: 70%;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: url("/assets/icons/down-arrow-black.png");
   background-size: 40px;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1003,6 +1007,7 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/registration-1.jpg");
 }
 /* line 571, ../sass/screen.scss */
 #registration .title {
@@ -1072,6 +1077,7 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/map-loading.jpg");
 }
 /* line 630, ../sass/screen.scss */
 #map #map-loading > div {
@@ -1409,4 +1415,5 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-image: url("/assets/img/landing-2.jpg");
 }

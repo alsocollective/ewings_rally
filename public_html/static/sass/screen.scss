@@ -341,7 +341,7 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
-			// background-image: url("/assets/img/about-prt.jpg");
+			background-image: url("/assets/img/about-prt.jpg");
 			// background-size: 40%;
 			width: 15em;
 			height: 15em;
@@ -394,7 +394,7 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
-			// background-image: url("/assets/img/about-bg-1.jpg");
+			background-image: url("/assets/img/about-bg-1.jpg");
 		}
 		#background-2{
 			-webkit-transform: skewX(-45deg);
@@ -413,7 +413,7 @@
 				background-position: center;
 				background-repeat: no-repeat;
 				@include vendorize(background-size,cover);
-				// background-image: url("/assets/img/about-bg-2.jpg");
+				background-image: url("/assets/img/about-bg-2.jpg");
 				-webkit-transform: skewX(45deg);
 				transform: skewX(45deg);
 			}
@@ -435,7 +435,7 @@
 			height: 70%;
 			background-position: center;
 			background-repeat: no-repeat;
-			// background-image: url("/assets/icons/down-arrow-black.png");
+			background-image: url("/assets/icons/down-arrow-black.png");
 			background-size: 40px;
 			@include rotate(-45deg);
 			@include origin(50% 50%);
@@ -566,7 +566,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	@include vendorize(background-size,cover);
-	// background-image: url("/assets/img/registration-1.jpg");
+	background-image: url("/assets/img/registration-1.jpg");
 
 	.title{
 		@extend .titles;
@@ -626,7 +626,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		@include vendorize(background-size,cover);
-		// background-image: url("/assets/img/map-loading.jpg");
+		background-image: url("/assets/img/map-loading.jpg");
 		> div {
 			color: #fff;
 			@include bold();
@@ -854,5 +854,5 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	@include vendorize(background-size, cover);
-	// background-image: url("/assets/img/landing-2.jpg");
+	background-image: url("/assets/img/landing-2.jpg");
 }
