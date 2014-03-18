@@ -657,12 +657,11 @@
 			text-align: right;
 			a{
 				display: inline-block;
-				padding: 8% 5%;
-				background-color: #fff;
-				color: inherit;
 				text-decoration: inherit;
 				color: #fff;
-				width: 91%
+				padding: 1em 5% 1em 0%;
+				width: 105%;
+				margin-left: -10%;
 			}
 			a:hover{
 				background-color: #ccc;
@@ -678,14 +677,16 @@
 			background-color: $blue;
 		}
 		#controll-pannel{
-			width: 100%;
+			width: 110%;
 			text-align: center;
+			margin-left: -10%;
 			a{
 				display: inline-block;
 				padding: 1em 0;
 				width: 50%;
 				height: 100%;
 				background-color: $blue;
+				margin-left: 0%;
 			}
 			a:hover{
 				background-color: #000;

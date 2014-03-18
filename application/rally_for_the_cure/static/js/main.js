@@ -106,12 +106,12 @@ function menu_nav_click(event){
 		slideMenu.refindHeight();
 	}
 	var link = this.href.split("/");
-	if(link[link.length-1] == "contact"){
-		//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
-	} else {
+	// if(link[link.length-1] == "contact"){
+	// 	//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
+	// } else {
 		setURL(link);
 		animateScroll("#"+link[link.length-1]);
-	}
+	// }
 	toggleOut(event);
 	return false;
 }
@@ -499,7 +499,8 @@ function scrollFromCarocel(direction){
 	if(scrolling){
 		return false;
 	}
-	if(direction == "down"){
+	console.log($(window).scrollTop());
+	if(direction == "down" && $(window).scrollTop() < 500){
 		scrolling = true;
 		$('html, body').animate({
 			scrollTop: $("#about").offset().top

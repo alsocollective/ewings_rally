@@ -46,8 +46,9 @@
 				<li><a href="attenders" class="nav-clicker">Drivers</a></li>
 				<li><a href="attenders" class="nav-clicker">Guests</a></li>
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
-				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
+				<li><a href="map" class="nav-clicker">Map</a></li>
 				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
+				<li><a href="contact" class="nav-clicker">Contact</a></li>
 			</ul>
 			<div id="background-colour"></div><!-- switch for phone --> <!-- <div class="last-button"></div> -->
 		</div>
@@ -300,7 +301,13 @@
 		{% if forloop.last %}{% else %},{% endif %}
 	{% endfor %}
 	]
+
+	{% for slide in slides %}
+	var image_{{forloop.counter}} = new Image();
+	image_{{forloop.counter}}.src = "{{ MEDIA_URL }}{{slide.background_image}}";
+	{% endfor %}
 </script>
+
 <script type="text/javascript" src="{% static "js/main.js"%}"></script>
 </body>
 </html>
