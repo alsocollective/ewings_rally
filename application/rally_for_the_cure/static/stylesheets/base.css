@@ -151,61 +151,62 @@ a {
   line-height: 1.35;
   overflow: hidden;
   white-space: nowrap;
+  background-color: #fff;
 }
 
 @-webkit-keyframes fadeOut {
-  /* line 132, ../sass/base.scss */
+  /* line 136, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 136, ../sass/base.scss */
+  /* line 140, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-moz-keyframes fadeOut {
-  /* line 132, ../sass/base.scss */
+  /* line 136, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 136, ../sass/base.scss */
+  /* line 140, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-ms-keyframes fadeOut {
-  /* line 132, ../sass/base.scss */
+  /* line 136, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 136, ../sass/base.scss */
+  /* line 140, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @keyframes fadeOut {
-  /* line 132, ../sass/base.scss */
+  /* line 136, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 136, ../sass/base.scss */
+  /* line 140, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
-/* line 147, ../sass/base.scss */
+/* line 151, ../sass/base.scss */
 body #djDebug {
   display: none !important;
   height: 100%;

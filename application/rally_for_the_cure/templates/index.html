@@ -63,7 +63,7 @@
 
 		</div>
 		{% for slide in slides %}
-		<div class="slide {% if forloop.first %}heighlight{% endif %}">
+		<div class="slide {% if forloop.first %}heighlight{% else %} off{% endif %}">
 			<div class="slide-container">
 				<div class="image-background" style="background-image: url('media/{{slide.background_image}}')"></div>
 				<div class="slide-text">
@@ -99,10 +99,10 @@
 						</div>
 					</div>
 					{% else %}
-					<div id="logo-slide">
-						<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
-					</div>
 					<div id="quote-container">
+						<div id="logo-slide">
+							<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+						</div>
 						<p class="quote">{{slide.quote_text}}</p>
 					</div>
 					{% endif %}
@@ -120,14 +120,14 @@
 				<div style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>
 			</div>
 			<div id="background-image-container">
-				<div id="background-1" style="background-image: url('/media/{{data.background_image_1}}')"></div>
+				<div id="background-1" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_1}}')"></div>
 	 			<div id="background-2" data-top-bottom="transform: translateX(0%) skewX(-45deg)" data-500-bottom="transform: translateX(50%) skewX(-45deg)" >
-					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('/media/{{data.background_image_2}}')"></div>
+					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_2}}')"></div>
 				</div>
 			</div>
 			<div class="title">INSPIRATION</div>
 			<div id="left" >
-				<div id="imageBox" style="background-image: url('/media/{{data.background_image_portrait}}')"></div>
+				<div id="imageBox" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_portrait}}')"></div>
 			</div><div id="right">
 				<p>{{data.inspiration_top|safe}}
 				</p>
@@ -200,7 +200,7 @@
 				</svg>
 			</div>
 		</div>
-		<div id="registration" class="section snap" style="background-image: url('/media/{{data.background_image_registration}}')">
+		<div id="registration" class="section snap" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_registration}}')">
 			<div class="title">Registration</div>
 			<div id="paypal" class="half">
 				<h2><a href="{{data.online_payment_link}}">Online Payment</a></h2>
@@ -214,15 +214,15 @@
 				<h2>Required Documents</h2><br>
 				<div>
 					<img src="{% static "assets/icons/ic-waiver.png"%}" width="80px">
-					<h3><a href="/media/uploaded/{{data.waiver_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.waiver_form}}">Download</a></h3>
 					<p>Waiver Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-pledge.png"%}" width="80px">
-					<h3><a href="/media/uploaded/{{data.pledge_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.pledge_form}}">Download</a></h3>
 					<p>Pledge Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-registration.png"%}" width="80px">
-					<h3><a href="/media/uploaded/{{data.registration_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.registration_form}}">Download</a></h3>
 					<p>Registration Form</p>
 				</div>
 			</div>
@@ -260,12 +260,15 @@
 				 viewBox="0 0 5 5" preserveAspectRatio="none">
 			<polygon opacity="0.05" fill="#FFFFFF" points="5,5 0,5 5,0 "/>
 			</svg>
+			<script type="text/javascript">
+			alert("{{ MEDIA_URL }}");
+			</script>
 			<h2 id="title">Sponsors</h2>
 			<div class="sponsor" id="platinum">
 				<h3>Platinum</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Platinum" %}
-						<img src="/media/{{sponsor.logo}}">
+						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -273,7 +276,7 @@
 				<h3>Gold</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Gold" %}
-						<img src="/media/{{sponsor.logo}}">
+						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -281,7 +284,7 @@
 				<h3>Silver</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Silver" %}
-						<img src="/media/{{sponsor.logo}}">
+						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -289,7 +292,7 @@
 				<h3>Bronze</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Bronze" %}
-						<img src="/media/{{sponsor.logo}}">
+						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
 					{% endif %}
 				{% endfor %}
 			</div>

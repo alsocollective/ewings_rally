@@ -381,6 +381,7 @@ function makeLegend(locations){
 				closeAllTabs();
 				map.panTo(data[2]);
 				data[0].open(map,data[1]);
+				console.log(data[0])
 				if(data[3] == "pilots"){
 					map.setZoom(12);
 				} else if(data[3] == "drivers"){
