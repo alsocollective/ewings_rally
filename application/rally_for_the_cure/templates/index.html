@@ -1,6 +1,7 @@
 {% load staticfiles %}
 
-<!DOCTYPE html>
+<!DOCTYPE html >
+<html type="text/html">
 <head>
 	<title>Rally for the Cure</title>
 	<meta charset="utf-8"/>
@@ -25,7 +26,9 @@
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/717268/677204/css/fonts.css" />
 </head>
 <body class="yellow-nav">
-<div id="loading-screen" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
+
+
+<div id="loading-screen" style="background-image: url('media/{{slides.0.background_image}}')"></div>
 <div id="nav-button">
 	<div id="nav-button-container">
 		<div class="line"></div>
@@ -54,18 +57,18 @@
 
 	<div id="carousel" class="section">
 		<div id="carousel-nav">
-			<div class="slide-nav active" id="1"></div>
-			<div class="slide-nav" id="2"></div>
-			<div class="slide-nav" id="3"></div>
-			<div class="slide-nav" id="4"></div>
-			<div class="slide-nav" id="5"></div>
-			<div class="slide-nav" id="6"></div>
-			<div class="slide-nav" id="7"></div>
+			{% for slide in slides %}
+				<div class="slide-nav {% if forloop.first %}active{% endif %}" id="{{forloop.counter}}"></div>
+			{% endfor %}
+
 		</div>
-		<div class="slide heighlight">
+		{% for slide in slides %}
+		<div class="slide {% if forloop.first %}heighlight{% endif %}">
 			<div class="slide-container">
-				<div class="image-background" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
+				<div class="image-background" style="background-image: url('media/{{slide.background_image}}')"></div>
+				<div id="quote-container"><p class="quote">{{slide.quote_text}}</p></div>
 				<div class="slide-text">
+					{% if forloop.first %}
 					<div id="logo-slide">
 						<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
 						<div id="rally-logo">
@@ -96,9 +99,11 @@
 							</svg>
 						</div>
 					</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>
+		{% endfor %}
 	</div>
 
 <div id="scroller-container">
@@ -118,17 +123,9 @@
 			<div id="left" >
 				<div id="imageBox" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
 			</div><div id="right">
-				<p>PILOTS TAKE TO THE AIR AND DRIVERS TO THE ROAD TO RAISE FUNDS FOR CANCER RESEARCH
+				<p>{{data.inspiration_top|safe}}
 				</p>
-				<p>On Sunday September 14, 2014 The Ewings Cancer Foundation of Canada (ECFC) will host its 5th Annual Rally for the Cure, a charity fundraising event featuring an Air and Car Rally with a treasure hunt theme.  The Car Rally will take place throughout the York Region as the Air Rally takes place simultaneously from six participating Municipal Airports.
-				</p>
-				<p>The Rally is followed by an enjoyable afternoon at Buttonville Airport that includes an M&amp;M “special menu” BBQ lunch, a sensational silent auction, live musical entertainment featuring The Emma Street Band and Glenn Reid &amp; Boogaloo with an awards ceremony and Citytv’s own BT personality Frank Ferragine as the event MC.</p>
-				<p>All proceeds from this event go directly to The Ewings Cancer Foundation of Canada to support Ewing sarcoma specific research grants.</p>
-				<p>Ewing sarcoma occurs most often in 10-20 year olds but can happen at any age and is the second most common bone cancer. Ewing sarcoma is a highly aggressive cancer that often goes undiagnosed or is mistaken as growing pains or a sports injury.If metastases has occurred, the chance of cure is less than 20%.</p>
-				<p>Tina Pernica, Founder of the ECFC, speaks about her son, Reid, a young pilot who lost his battle with this disease in November 2007.  He was 19 years old.</p>
-				<p>“It was always Reid’s dream to become a pilot.  He was able to fulfill that dream while working at Buttonville Airport and taking flying lessons. He made his first solo flight just months before his cancer, then in remission, returned.  The wings in our logo symbolize Reid’s dream of flight.”</p>
-				<p>“Our loss of Reid to Ewing sarcoma was devastating.” Tina attests. “It was infuriating to learn how little research has been completed since its discovery in the 1920s. How can physicians treat the disease without greater understanding?”</p>
-				<p>“Most importantly, we want the children and young adults affected by this disease to ultimately reap the benefits of this research,” Tina emphasizes, “and to have the opportunity to look forward to living long lives spent fulfilling their dreams.”</p>
+				{{data.inspiration|safe}}
 			</div>
 		</div>
 		<div id="attenders" class="section snap">
@@ -146,47 +143,7 @@
 				<br>
 				<h2>Information<br>for Guests</h2>
 				<div id="text">
-					<p>
-						<a href="https://guestlistapp.com/events/236055"><span class="link">Ticket Purchase</span></a>
-					</p>
-					<p>
-						The Rally is followed by an enjoyable afternoon at Buttonville Municipal Airport in Hangar 17A that includes an M&amp;M “special menu” BBQ lunch, a sensational silent auction, live musical entertainment featuring The Emma Street Band and Glenn Reid &amp; Boogaloo with an awards ceremony and Citytv’s own BT personality Frank Ferragine as the event MC.
-					</p>
-					<p>
-						Please also take into consideration downloading our pledge form (can be found on our registration page). This form is not required, however, greatly appreciated in helping us raise funds for ECFC Ewing sarcoma research. These donations / pledges are tax deductible and will receive an official receipt from The Ewings Cancer Foundation of Canada.
-					</p>
-					<p>
-						Prizes will be awarded to the top three pledge collectors for the highest total pledges collected.
-					</p>
-					<p>
-						We sincerely thank you for helping ECFC to achieve our Ewing sarcoma research granting goals.
-					</p>
-					<h3>
-						Tickets
-					</h3>
-
-					<table>
-						<tr><td>$25.00</td><td>Adults</td></tr>
-						<tr><td>$12.50</td><td>Children 4–12</td></tr>
-						<tr><td>FREE</td><td>Children 3 and Under</td></tr>
-					</table>
-
-					<p>
-						Tickets can be ordered on the Rally website or at the gate
-					</p>
-					<p>
-						BBQ starts at 1:00pm at Buttonville Airport Hanger 17A
-					</p>
-					<p>
-						Parking available at 180 Renfrew Drive (refer to map)
-					</p>
-					<p>
-						The Ewings Cancer Foundation of Canada<br>
-						Rally Registration<br>
-						72 Rockport Crescent<br>
-						Richmond Hill, Ontario, Canada<br>
-						L4C 2L8
-					</p>
+					{{data.guests_text|safe}}
 				</div>
 			</div><div id="pilots" class="main-coloum">
 				<!--[if lt IE 9]>
@@ -198,38 +155,7 @@
 				<br>
 				<h2>Information<br>for Pilots</h2>
 				<div id="text">
-					<p>
-						Each participating aircraft must have a minimum of 2 people on board (the pilot and the Co-Pilot)
-					</p>
-					<p>
-						You are able to choose any of the 6 participating airports to begin:
-					</p>
-					<p>
-						Start at any of the participating airports:
-					</p>
-					<table>
-						<tr><td>Buttonville</td><td>CYKZ</td></tr>
-						<tr><td>Peterborough</td><td>CYPO</td></tr>
-						<tr><td>Edenvale</td><td>CNV8</td></tr>
-						<tr><td>Lindsay</td><td>CNFA</td></tr>
-						<tr><td>Oshawa</td><td>CYOO</td></tr>
-						<tr><td>Kingston</td><td>CYGK</td></tr>
-					</table>
-					<p>
-						Starting times will be between 9am – 10am.
-					</p>
-					<p>
-						At the participating airport of choice you will be provided with a choice of two alternate routes and accompanying routes instructions along with a colour-coded questionnaire.
-					</p>
-					<p>
-						The starting instructions will specify 2 designated intermediate stops and the final stop at Buttonville Municipal Airport. At each intermediate stop you will be required to pick up a questionnaire for the next flight leg. It will be on different coloured paper.
-					</p>
-					<p>
-						You must bring 3 different coloured questionnaires to complete the rally. These will be collected when you arrive at Buttonville.
-					</p>
-					<p>
-						Please communicate with Toronto Terminal when appropriate and broadcast your intentions on the local VFR frequencies and Unicom’s.
-					</p>
+					{{data.pilots_text|safe}}
 				</div>
 			</div><div id="drivers" class="main-coloum">
 				<!--[if lt IE 9]>
@@ -243,23 +169,7 @@
 				<br>
 				<h2>Information<br>for Drivers</h2>
 				<div id="text">
-					<p>
-						Please note that this is not a speed event, this event is a fun filled afternoon with a treasure hunt theme.
-					</p>
-					<p>
-						The starting Point will be:<br>
-						Bayview Secondary School,<br>
-						10077 Bayview Avenue,<br>
-						Richmond Hill ON<br>
-						L4C 2L4
-					</p>
-					<h3>Map</h3>
-					<p>
-						Starting times will be between 9:30am – 10:30am.
-					</p>
-					<p>
-						At the Rally departure point you will be provided with your rally instruction package along with a Rally for the Cure flag to be placed on the window of your vehicle for the duration of the Rally to be followed by a BBQ and silent auction with live entertainment by the The Emma Street Band and Glenn Reid &amp; Boogaloo.
-					</p>
+					{{data.drivers_text|safe}}
 				</div>
 			</div>
 			<div id="guests" class="background-coloums">
@@ -287,26 +197,26 @@
 		<div id="registration" class="section snap" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')">
 			<div class="title">Registration</div>
 			<div id="paypal" class="half">
-				<h2><a href="">Online Payment</a></h2>
-				<p>Download, complete and send via email (contact@ewingscancer.ca) Registration and waiver form. You will receive a confirmation by us via email once payment and forms have both been received.</p>
+				<h2><a href="{{data.online_payment_link}}">Online Payment</a></h2>
+				<p>{{data.online_payment_text}}</p>
 
 			</div><div id="cheque" class="half">
 				<h2><a href="https://guestlistapp.com/events/236055">Cheque</a></h2>
-				<p>Print and complete your registration form and mail it along with your cheque made payable to The Ewings Cancer Foundation of Canada to the address below, be sure to include your signed waiver from. You will receive a confirmation by us via email once payment and forms have both been received.</p>
+				<p>{{data.cheque_payment_text}}</p>
 			</div>
 			<div id="docs">
 				<h2>Required Documents</h2><br>
 				<div>
 					<img src="{% static "assets/icons/ic-waiver.png"%}" width="80px">
-					<h3><a href="{% static "assets/downloads/waiver.pdf"%}">Download</a></h3>
+					<h3><a href="/media/uploaded/{{data.waiver_form}}">Download</a></h3>
 					<p>Waiver Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-pledge.png"%}" width="80px">
-					<h3><a href="{% static "assets/downloads/pledge-sheet.pdf"%}">Download</a></h3>
+					<h3><a href="/media/uploaded/{{data.pledge_form}}">Download</a></h3>
 					<p>Pledge Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-registration.png"%}" width="80px">
-					<h3><a href="{% static "assets/downloads/registration-form.pdf"%}">Download</a></h3>
+					<h3><a href="/media/uploaded/{{data.registration_form}}">Download</a></h3>
 					<p>Registration Form</p>
 				</div>
 			</div>
@@ -316,8 +226,13 @@
 			<div id="map-loading" style="background-image: url('{% static "assets/img/map-loading.jpg"%}')"><div>Loading Map</div></div>
 			<div id="map-hyper-location">
 				<h2 class="title">Map Links</h2>
-				<dl>
-					<dt>For Guests</dt>
+				<ul>
+				{% for location in map_locations %}
+					<li class="{{location.location_type}}"><a href="location.link_url">{{location.title}}</a></li>
+				{% endfor %}
+				</dl>
+				<ul>
+					{# <dt>For Guests</dt>
 					<dd><a href="https://www.google.ca/maps/place/43%C2%B051'40.9%22N+79%C2%B022'00.2%22W/@43.8613492,-79.3667179,15z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">Buttonville Hanger 17a</a></dd>
 					<dd><a href="https://www.google.ca/maps/place/180+Renfrew+Dr/@43.8638698,-79.3661961,17z/data=!3m1!4b1!4m2!3m1!1s0x89d4d4d914774427:0x4589aec63bde7e40">Airport Parking</a></dd>
 					<dt>For Pilots</dt>
@@ -328,7 +243,7 @@
 					<dd><a href="https://www.google.ca/maps/place/Oshawa+Municipal+Airport/@43.9097022,-78.892216,14z/data=!3m1!4b1!4m2!3m1!1s0x89d51c6f83ef7e95:0x3aa94a20d1ec68d9">Oshawa Airport</a></dd>
 					<dd><a href="https://www.google.ca/maps/place/Kingston+Airport/@44.2252428,-76.596066,15z/data=!3m1!4b1!4m2!3m1!1s0x4cd2ad23acdff82b:0x230a3bf7749fe036">Kingston Airport</a></dd>
 					<dt>For Drivers</dt>
-					<dd><a href="https://www.google.ca/maps/place/Bayview+Secondary+School/@43.8783439,-79.4137697,18z/data=!3m1!4b1!4m2!3m1!1s0x882b2afab8c0c78d:0x4e66de5dc59407d3">Driving Starting Point</a></dd>
+					<dd><a href="https://www.google.ca/maps/place/Bayview+Secondary+School/@43.8783439,-79.4137697,18z/data=!3m1!4b1!4m2!3m1!1s0x882b2afab8c0c78d:0x4e66de5dc59407d3">Driving Starting Point</a></dd> #}
 
 				</dl>
 			</div>
@@ -386,9 +301,16 @@
 	</div>
 
 </div>-->
+Buttonville Hanger<br>",[43.8613492,-79.3667179],"Meeting at Buttonville<br>Airport Hanger 17A","guests"
 <script type="text/javascript">
-	var staticLink = "{% static ""%}";
-	console.log(staticLink)
+	var staticLink = "{% static ""%}",
+	map_location = [
+	{% for location in map_locations %}
+		["{{location.title}}",[{{location.lat}},{{location.log}}],"{{location.description}}","{{location.location_type}}"]
+		{% if forloop.last %}{% else %},{% endif %}
+	{% endfor %}
+	]
+	console.log(map_location)
 </script>
 <script type="text/javascript" src="{% static "js/main.js"%}"></script>
 </body>

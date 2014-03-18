@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../../../../Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -203,6 +203,16 @@ a {
   0% {
     opacity: 1;
   }
+}
+
+/* line 147, ../sass/base.scss */
+#djDebug {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999999999;
+  width: 100%;
 }
 
 /* line 8, ../sass/screen.scss */
@@ -749,7 +759,6 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/about-prt.jpg");
   width: 15em;
   height: 15em;
   -webkit-border-radius: 50%;
@@ -811,7 +820,6 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/about-bg-1.jpg");
 }
 /* line 399, ../sass/screen.scss */
 #about #background-image-container #background-2 {
@@ -837,7 +845,6 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/about-bg-2.jpg");
   -webkit-transform: skewX(45deg);
   transform: skewX(45deg);
 }
@@ -865,7 +872,6 @@ a {
   height: 70%;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("/assets/icons/down-arrow-black.png");
   background-size: 40px;
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1007,7 +1013,6 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/registration-1.jpg");
 }
 /* line 571, ../sass/screen.scss */
 #registration .title {
@@ -1077,7 +1082,6 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/map-loading.jpg");
 }
 /* line 630, ../sass/screen.scss */
 #map #map-loading > div {
@@ -1415,5 +1419,4 @@ a {
   -ms-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-image: url("/assets/img/landing-2.jpg");
 }

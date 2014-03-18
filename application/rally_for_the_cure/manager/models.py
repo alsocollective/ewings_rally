@@ -5,7 +5,7 @@ class Slide(models.Model):
 	title = models.CharField(max_length=50)
 	quote_text = models.TextField(max_length=1000)
 	background_image = ThumbnailerImageField(upload_to='uploaded/images')
-
+	#order of the slides
 
 class Logos(models.Model):
 	loc_type = (
@@ -22,30 +22,34 @@ class Logos(models.Model):
 class location(models.Model):
 	title = models.CharField(max_length=200)
 	loc_type = (
-			("guest","guest"),
-			("pilot","pilot"),
-			("driver","driver"),
+			("guests","guests"),
+			("pilots","pilots"),
+			("drivers","drivers"),
 		)
 	location_type = models.CharField(max_length=55,choices=loc_type,default="guest")
 	lat = models.CharField(max_length=30)
 	log = models.CharField(max_length=30)
 	description = models.TextField(max_length=500)
+	# link url
+	# order of location
 
 
 class Content(models.Model):
 	slides = models.ManyToManyField(Slide)
 
 	inspiration_top = models.TextField(max_length=300)
-
 	inspiration = models.TextField(max_length=3000)
+	#background image 1 for insperation
+	#background image 2 for insperation
 	guests_text = models.TextField(max_length=2000)
 	pilots_text = models.TextField(max_length=2000)
 	drivers_text = models.TextField(max_length=2000)
 
 	online_payment_link = models.CharField(max_length=300)
-	online_payment_text = models.CharField(max_length=1000)
+	online_payment_text = models.CharField(max_length=1000) #to text field
+	#background image for registration
 
-	cheque_payment_text= models.CharField(max_length=1000)
+	cheque_payment_text= models.CharField(max_length=1000) #to text field
 	waiver_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
 	pledge_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
 	registration_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
