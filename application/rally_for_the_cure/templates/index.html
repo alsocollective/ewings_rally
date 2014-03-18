@@ -114,14 +114,14 @@
 				<div style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>
 			</div>
 			<div id="background-image-container">
-				<div id="background-1" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
+				<div id="background-1" style="background-image: url('/media/{{data.background_image_1}}')"></div>
 	 			<div id="background-2" data-top-bottom="transform: translateX(0%) skewX(-45deg)" data-500-bottom="transform: translateX(50%) skewX(-45deg)" >
-					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
+					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('/media/{{data.background_image_2}}')"></div>
 				</div>
 			</div>
 			<div class="title">INSPIRATION</div>
 			<div id="left" >
-				<div id="imageBox" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')"></div>
+				<div id="imageBox" style="background-image: url('/media/{{data.background_image_portrait}}')"></div>
 			</div><div id="right">
 				<p>{{data.inspiration_top|safe}}
 				</p>
@@ -194,7 +194,7 @@
 				</svg>
 			</div>
 		</div>
-		<div id="registration" class="section snap" style="background-image: url('http://i.imgur.com/SYC7u1Y.jpg')">
+		<div id="registration" class="section snap" style="background-image: url('/media/{{data.background_image_registration}}')">
 			<div class="title">Registration</div>
 			<div id="paypal" class="half">
 				<h2><a href="{{data.online_payment_link}}">Online Payment</a></h2>
@@ -228,9 +228,9 @@
 				<h2 class="title">Map Links</h2>
 				<ul>
 				{% for location in map_locations %}
-					<li class="{{location.location_type}}"><a href="location.link_url">{{location.title}}</a></li>
+					<li class="{{location.location_type}}"><a href="location.link_url">{{location.title|safe}}</a></li>
 				{% endfor %}
-				</dl>
+				</ul>
 				<ul>
 					{# <dt>For Guests</dt>
 					<dd><a href="https://www.google.ca/maps/place/43%C2%B051'40.9%22N+79%C2%B022'00.2%22W/@43.8613492,-79.3667179,15z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0">Buttonville Hanger 17a</a></dd>
@@ -248,7 +248,6 @@
 				</dl>
 			</div>
 		</div>
-		
 		<div id="sponsors" class="section snap">
 			<svg version="1.1"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
@@ -258,59 +257,58 @@
 			<h2 id="title">Sponsors</h2>
 			<div class="sponsor" id="platinum">
 				<h3>Platinum</h3>
-				<img src="{% static "assets/logos/copa-logo.png"%}"><img src="{% static "assets/logos/mm-logo.png"%}"><img src="{% static "assets/logos/toairways-logo.png"%}">
+				{% for sponsor in sponsors%}
+					{% if sponsor.status == "Platinum" %}
+						<img src="/media/{{sponsor.logo}}">
+					{% endif %}
+				{% endfor %}
 			</div>
 			<div class="sponsor" id="gold">
 				<h3>Gold</h3>
-				<img src="{% static "assets/logos/also-logo.png"%}"><img src="{% static "assets/logos/copa.png"%}">
+				{% for sponsor in sponsors%}
+					{% if sponsor.status == "Gold" %}
+						<img src="/media/{{sponsor.logo}}">
+					{% endif %}
+				{% endfor %}
 			</div>
 			<div class="sponsor" id="silver">
 				<h3>Silver</h3>
-				<img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}">
+				{% for sponsor in sponsors%}
+					{% if sponsor.status == "Silver" %}
+						<img src="/media/{{sponsor.logo}}">
+					{% endif %}
+				{% endfor %}
 			</div>
 			<div class="sponsor" id="bronze">
 				<h3>Bronze</h3>
-				<img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}"><img src="{% static "assets/logos/copa.png"%}">
+				{% for sponsor in sponsors%}
+					{% if sponsor.status == "Bronze" %}
+						<img src="/media/{{sponsor.logo}}">
+					{% endif %}
+				{% endfor %}
 			</div>
 		</div>
-		
 		<div id="contact">
 			<div id="click-away"></div>
 			<div id="content">
 				<div>
 					<p>
-						<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="">contact@ewingscancer.ca</a> | <a href="">Tel: 905-737-0127</a>
+						<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="mailto:{{data.conact_email}}">{{data.conact_email}}</a> | <a href="tel:{{data.conact_phone}}">Tel: {{data.conact_phone}}</a>
 					</p>
 				</div>
 			</div>
 
 		</div>
-		
 	</div>
 </div>
-
-<!-- <div id="contact" class="scroll-out"> -->
-<!-- <div id="contact">
-	<div id="click-away"></div>
-	<div id="content">
-		<div>
-			<p>
-				<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="">contact@ewingscancer.ca</a> | <a href="">Tel: 905-737-0127</a>
-			</p>
-		</div>
-	</div>
-
-</div>-->
-Buttonville Hanger<br>",[43.8613492,-79.3667179],"Meeting at Buttonville<br>Airport Hanger 17A","guests"
 <script type="text/javascript">
 	var staticLink = "{% static ""%}",
 	map_location = [
 	{% for location in map_locations %}
-		["{{location.title}}",[{{location.lat}},{{location.log}}],"{{location.description}}","{{location.location_type}}"]
+		["{{location.title|safe}}",[{{location.lat|safe}},{{location.log|safe}}],"{{location.description|safe}}","{{location.location_type}}"]
 		{% if forloop.last %}{% else %},{% endif %}
 	{% endfor %}
 	]
-	console.log(map_location)
 </script>
 <script type="text/javascript" src="{% static "js/main.js"%}"></script>
 </body>

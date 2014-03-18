@@ -4,8 +4,8 @@ from django.db import models
 class Slide(models.Model):
 	title = models.CharField(max_length=50)
 	quote_text = models.TextField(max_length=1000)
-	background_image = ThumbnailerImageField(upload_to='uploaded/images')
-	#order of the slides
+	background_image = ThumbnailerImageField(upload_to='uploaded/img')
+	order = models.IntegerField(default=99)		#
 
 class Logos(models.Model):
 	loc_type = (
@@ -16,7 +16,7 @@ class Logos(models.Model):
 		)
 	status = models.CharField(max_length=55,choices=loc_type,default="guest")
 	title = models.CharField(max_length=50)
-	logo = ThumbnailerImageField(upload_to='uploaded/images')
+	logo = ThumbnailerImageField(upload_to='uploaded/img')
 	link =  models.CharField(max_length=300)
 
 class location(models.Model):
@@ -30,8 +30,8 @@ class location(models.Model):
 	lat = models.CharField(max_length=30)
 	log = models.CharField(max_length=30)
 	description = models.TextField(max_length=500)
-	# link url
-	# order of location
+	order = models.IntegerField(default=99)			#
+	link_url = models.CharField(max_length=300)		#
 
 
 class Content(models.Model):
@@ -39,20 +39,23 @@ class Content(models.Model):
 
 	inspiration_top = models.TextField(max_length=300)
 	inspiration = models.TextField(max_length=3000)
-	#background image 1 for insperation
-	#background image 2 for insperation
+	background_image_1 = ThumbnailerImageField(upload_to='uploaded/img')	#
+	background_image_2 = ThumbnailerImageField(upload_to='uploaded/img')	#
+	background_image_portrait = ThumbnailerImageField(upload_to='uploaded/img')	#
+
+
 	guests_text = models.TextField(max_length=2000)
 	pilots_text = models.TextField(max_length=2000)
 	drivers_text = models.TextField(max_length=2000)
 
 	online_payment_link = models.CharField(max_length=300)
-	online_payment_text = models.CharField(max_length=1000) #to text field
-	#background image for registration
+	online_payment_text = models.TextField(max_length=1000)
+	background_image_registration = ThumbnailerImageField(upload_to='uploaded/img')
 
-	cheque_payment_text= models.CharField(max_length=1000) #to text field
-	waiver_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
-	pledge_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
-	registration_form = models.FileField(upload_to='backgroundimage/%Y/%m/%d')
+	cheque_payment_text= models.TextField(max_length=1000)
+	waiver_form = models.FileField(upload_to='files')
+	pledge_form = models.FileField(upload_to='files')
+	registration_form = models.FileField(upload_to='files')
 
 	map_locations =  models.ManyToManyField(location)
 	sponsors =  models.ManyToManyField(Logos)
