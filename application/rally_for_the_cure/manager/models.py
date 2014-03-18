@@ -5,7 +5,7 @@ class Slide(models.Model):
 	title = models.CharField(max_length=50)
 	quote_text = models.TextField(max_length=1000,blank=True)
 	background_image = ThumbnailerImageField(upload_to='uploaded/img')
-	order = models.IntegerField(default=99)		#
+	order = models.IntegerField(default=99)
 	def __unicode__(self):
 		return self.title
 
@@ -34,8 +34,8 @@ class location(models.Model):
 	lat = models.CharField(max_length=30)
 	log = models.CharField(max_length=30)
 	description = models.TextField(max_length=500)
-	order = models.IntegerField(default=99)			#
-	link_url = models.CharField(max_length=300)		#
+	order = models.IntegerField(default=99)
+	link_url = models.CharField(max_length=300)
 	def __unicode__(self):
 		return self.title
 
@@ -45,9 +45,9 @@ class Content(models.Model):
 
 	inspiration_top = models.TextField(max_length=300)
 	inspiration = models.TextField(max_length=3000)
-	background_image_1 = ThumbnailerImageField(upload_to='uploaded/img')	#
-	background_image_2 = ThumbnailerImageField(upload_to='uploaded/img')	#
-	background_image_portrait = ThumbnailerImageField(upload_to='uploaded/img')	#
+	background_image_1 = ThumbnailerImageField(upload_to='uploaded/img')
+	background_image_2 = ThumbnailerImageField(upload_to='uploaded/img')
+	background_image_portrait = ThumbnailerImageField(upload_to='uploaded/img')
 
 
 	guests_text = models.TextField(max_length=2000)

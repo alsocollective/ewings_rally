@@ -573,10 +573,6 @@ function setURL(location){
 
 function setUpMap(){
 
-	/*old map SETUP*/
-	// var map = $("#map-loading")
-	// map.children()[0].innerHTML = "Tap to load map";
-	// map.click(loadMapOnClick);
 }
 function loadMapOnClick(){
 	var el = $(this).children()[0];
