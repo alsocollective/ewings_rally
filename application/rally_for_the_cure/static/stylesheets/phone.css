@@ -154,59 +154,70 @@ a {
   background-color: #fff;
 }
 
+/* line 132, ../sass/base.scss */
+.donate-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  background: #ffb01a;
+  background-color: #ffb01a;
+  border: solid black 3px;
+}
+
 @-webkit-keyframes fadeOut {
-  /* line 136, ../sass/base.scss */
+  /* line 145, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 140, ../sass/base.scss */
+  /* line 149, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-moz-keyframes fadeOut {
-  /* line 136, ../sass/base.scss */
+  /* line 145, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 140, ../sass/base.scss */
+  /* line 149, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-ms-keyframes fadeOut {
-  /* line 136, ../sass/base.scss */
+  /* line 145, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 140, ../sass/base.scss */
+  /* line 149, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @keyframes fadeOut {
-  /* line 136, ../sass/base.scss */
+  /* line 145, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 140, ../sass/base.scss */
+  /* line 149, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
-/* line 151, ../sass/base.scss */
+/* line 160, ../sass/base.scss */
 body #djDebug {
   display: none !important;
   height: 100%;

@@ -109,7 +109,7 @@ function menu_nav_click(event){
 	// if(link[link.length-1] == "contact"){
 	// 	//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
 	// } else {
-		setURL(link);
+		// setURL(link);
 		animateScroll("#"+link[link.length-1]);
 	// }
 	toggleOut(event);

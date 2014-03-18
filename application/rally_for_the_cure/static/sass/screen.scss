@@ -112,7 +112,7 @@
 	}
 
 
-#nav-button{
+#nav-button,#social-media-buttons{
 	position: fixed;
 	z-index: 100;
 	left: -28px;
@@ -150,6 +150,11 @@
 		-webkit-transform: skewX(-45deg);
 		transform: skewX(-45deg);
 	}
+}
+
+#social-media-buttons{
+	left: inherit;
+	right: -28px;
 }
 #nav-button:hover{
 	left: -25px;
@@ -739,7 +744,7 @@
 		@extend .body-type; //for the type size
 		text-transform: uppercase;
 		font-weight: bolder;
-		font-weight: 1.4em;
+		font-size: 1.4em;
 		padding: 1em 0;
 	}
 
