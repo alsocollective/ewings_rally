@@ -207,6 +207,7 @@ a {
 
 /* line 147, ../sass/base.scss */
 body #djDebug {
+  display: none !important;
   height: 100%;
   position: fixed;
   left: 0;

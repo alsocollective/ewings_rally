@@ -346,17 +346,7 @@ function gmaploaded() {
 		for(var a = 0, max = map_location.length; a < max; ++a){
 			locations.push(makeIcon(map_location[a][0],map_location[a][1],map_location[a][2],map_location[a][3]));
 		}
-		// var locations = [
-		// 	makeIcon("Buttonville Hanger<br>",[43.8613492,-79.3667179],"Meeting at Buttonville<br>Airport Hanger 17A","guests"),
-		// 	makeIcon("Airport Parking<br>",[43.8638698,-79.3661961],"180 Renfrew<br>Drive","guests"),
-		// 	makeIcon("Buttonville Airport<br>",[43.8610426,-79.368975],"<br>CYKZ","pilots"),
-		// 	makeIcon("Peterborough Airport<br>",[54.9880443,-85.4437069],"<br>CYPO !might be wrong","pilots"),
-		// 	makeIcon("Edenvale Airport<br>",[44.4439291,-79.9636755],"<br>CNV8","pilots"),
-		// 	makeIcon("Lindsay Airport<br>",[44.364022,-78.7827989],"<br>CNFA !code name did not come up","pilots"),
-		// 	makeIcon("Oshawa Airport<br>",[43.9245641,-78.8967467],"<br>CYOO","pilots"),
-		// 	makeIcon("Kingston Airport<br>",[44.2252428,-76.596066],"<br>CYGK","pilots"),
-		// 	makeIcon("Driving Starting Point<br>",[43.8783451,-79.4151566],"Bayview Secondary School,<br>10077 Bayview Avenue,<br>Richmond Hill ON<br>L4C 2L4","drivers")
-		// 	]
+
 		map_all_locations = locations;
 		if(!phone){
 			makeLegend(locations);

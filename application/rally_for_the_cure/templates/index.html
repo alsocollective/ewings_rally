@@ -66,7 +66,6 @@
 		<div class="slide {% if forloop.first %}heighlight{% endif %}">
 			<div class="slide-container">
 				<div class="image-background" style="background-image: url('media/{{slide.background_image}}')"></div>
-				<div id="quote-container"><p class="quote">{{slide.quote_text}}</p></div>
 				<div class="slide-text">
 					{% if forloop.first %}
 					<div id="logo-slide">
@@ -98,6 +97,13 @@
 							<path fill="#FFFFFF" d="M153.692,205.586c0,12.555-0.898,26.262-17.037,26.262c-16.141,0-17.038-13.707-17.038-26.262v-50.756 c-1.164-0.037-2.329-0.068-3.492-0.097H94.512v54.312c0,12.426,0.51,24.725,10.118,34.074c8.07,7.941,20.753,10.76,32.025,10.76 c11.271,0,23.952-2.817,32.024-10.76c9.607-9.351,10.118-21.648,10.118-34.074v-50.033c-8.371-0.817-16.74-1.584-25.105-2.243 V205.586z"/>
 							</svg>
 						</div>
+					</div>
+					{% else %}
+					<div id="logo-slide">
+						<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+					</div>
+					<div id="quote-container">
+						<p class="quote">{{slide.quote_text}}</p>
 					</div>
 					{% endif %}
 				</div>
