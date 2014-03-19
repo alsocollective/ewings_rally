@@ -130,13 +130,10 @@ a{
 
 
 .donate-button{
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: 1em;
-	background: $yellow;
-	background-color: $yellow;
-	border: solid black 3px;
+	color: #fff;
+	text-decoration: none;
+	border: 2px solid $yellow;
+	padding: 0.2em 0.3em 0.2em 0.3em;
 }
 
 
