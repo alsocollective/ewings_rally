@@ -10,19 +10,18 @@
 	<script type="text/javascript" src="{% static "js/lib/jquery.js"%}"></script>
 	<script type="text/javascript" src="{% static "js/lib/waypoints.min.js"%}"></script>
 	<!-- only desktop -->
-
+	{% if desktop%}
 		<script type="text/javascript" src="{% static "js/lib/skrollr.js"%}"></script>
 		<script type="text/javascript" src="{% static "js/lib/jquery.scrollstop.js"%}"></script>
 		<script type="text/javascript" src="{% static "js/lib/jquery.easing.min.js"%}"></script>
 		<script type="text/javascript" src="{% static "js/lib/jquery.scrollsnap.js"%}"></script>
 		<script type="text/javascript" src="{% static "js/lib/jquery.mousewheel.js"%}"></script>
 		<link rel="stylesheet" type="text/css" href="{% static "stylesheets/screen.css"%}">
-
+	{% else %}
 	<!-- only Phone -->
-<!--
-		<script type="text/javascript" src="/js/lib/jquery.pullslider.js"></script>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/phone.css">
- -->
+		<script type="text/javascript" src="{% static "js/lib/jquery.pullslider.js"%}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "stylesheets/phone.css"%}">
+ 	{% endif %}
 	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/717268/677204/css/fonts.css" />
 </head>
 <body class="yellow-nav">
@@ -37,8 +36,10 @@
 		<div id="background-colour"></div>
 	</div>
 </div>
-
-	<nav id="nav"><!-- remove for phone -->
+	{% if desktop%}
+	<nav id="nav">
+	{% endif %}
+		<!-- remove for phone -->
 		<div id="nav-container">
 			<ul>
 				<li><a href="about" class="nav-clicker">About</a></li>
@@ -49,9 +50,12 @@
 				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
 				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
 			</ul>
-			<div id="background-colour"></div><!-- switch for phone --> <!-- <div class="last-button"></div> -->
+				{% if desktop%}<div id="background-colour"></div>{% else %}<div class="last-button"></div>{% endif %}
 		</div>
+	{% if desktop%}
 	</nav><!-- remove for phone -->
+	{% endif %}
+
 
 <div id="social-media-buttons">
 	<div id="nav-button-container">
@@ -109,7 +113,7 @@
 						<div id="logo-slide">
 							<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
 						</div>
-						<p class="quote">{{slide.quote_text}}</p>
+						<p class="quote">{{slide.quote_text|safe}}</p>
 					</div>
 					{% endif %}
 				</div>
@@ -299,6 +303,16 @@
 	</div>
 </div>
 <script type="text/javascript">
+	{% if desktop%}
+	var deskTop = true,
+		tablet = false,
+		phone = false;
+	{% else %}
+	var deskTop = false,
+		tablet = false,
+		phone = true;
+	{% endif %}
+
 	var staticLink = "{% static ""%}",
 	map_location = [
 	{% for location in map_locations %}

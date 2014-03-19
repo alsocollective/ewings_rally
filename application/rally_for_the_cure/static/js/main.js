@@ -1,9 +1,4 @@
-var deskTop = true,
-	tablet = false,
-	phone = false;
-
 setMarginTop();
-
 if(deskTop){
 	skrollr.init({
 		forceHeight: false
@@ -13,7 +8,7 @@ if(deskTop){
 var carousel_sliding=false,
 	carousel_conatiner=false,
 	windowHeight=$(window).outerHeight(),
-	scrolling = false,
+	scrolling = true,
 	showing_nav=false,
 	slideMenu = false,
 	winWidth = 0,
@@ -81,6 +76,7 @@ $(window).load(function(){
 	}
 	setTimeout(function(){
 		$("#loading-screen").fadeOut('slow');
+		scrolling = false;
 		setTimeout(function(){
 			$(".heighlight").addClass('text');
 		},1000)

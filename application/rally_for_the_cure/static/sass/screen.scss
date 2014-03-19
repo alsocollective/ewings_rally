@@ -218,27 +218,6 @@
 	}
 		// @include vendorize(transition,left 1.5s cubic-bezier(1,0,1,0))
 
-	div:nth-child(1) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-2.jpg");
-	}
-	div:nth-child(2) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-2.jpg");
-	}
-	div:nth-child(3) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-3-tony.jpg");
-	}
-	div:nth-child(4) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-4.jpg");
-	}
-	div:nth-child(5) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-5-reid.jpg");
-	}
-	div:nth-child(6) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-6-anna.jpg");
-	}
-	div:nth-child(7) .image-background{
-		background-image: url("http://also-static.com/rallyforthecure/media/uploaded/img/landing-7-sierra.jpg");
-	}
 	.slide.off{
 		display: none;
 	}
@@ -466,6 +445,7 @@
 		min-height: 100%;
 		z-index: 1;
 		svg{
+			display: inline-block;
 			fill:#fff;
 			max-height: 12%;
 			max-width: 150px;

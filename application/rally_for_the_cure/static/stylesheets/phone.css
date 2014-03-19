@@ -339,13 +339,18 @@ body {
   transform-origin: 50% 50%;
 }
 
+/* line 84, ../sass/phone.scss */
+#social-media-buttons {
+  display: none;
+}
+
 /*
   ___ __  ___  __  _  _   __  ___ _
  / _//  \| _ \/__\| || |/' _/| __| |
 | \_| /\ | v / \/ | \/ |`._`.| _|| |_
  \__/_||_|_|_\__/ \__/ |___/|___|___|
 */
-/* line 91, ../sass/phone.scss */
+/* line 94, ../sass/phone.scss */
 #carousel {
   position: fixed;
   -webkit-position: sticky;
@@ -358,7 +363,7 @@ body {
   top: 0;
   left: 0;
 }
-/* line 99, ../sass/phone.scss */
+/* line 102, ../sass/phone.scss */
 #carousel .slide {
   position: absolute;
   top: 0;
@@ -373,12 +378,12 @@ body {
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-/* line 107, ../sass/phone.scss */
+/* line 110, ../sass/phone.scss */
 #carousel .slide .slide-container, #carousel .slide .slide-text, #carousel .slide #rally-logo {
   width: 100%;
   height: 100%;
 }
-/* line 111, ../sass/phone.scss */
+/* line 114, ../sass/phone.scss */
 #carousel .slide .slide-text {
   opacity: 0;
   -webkit-transition: opacity 1s;
@@ -387,7 +392,7 @@ body {
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-/* line 115, ../sass/phone.scss */
+/* line 118, ../sass/phone.scss */
 #carousel .slide .image-background {
   width: 100%;
   height: 100%;
@@ -403,21 +408,21 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 128, ../sass/phone.scss */
+/* line 131, ../sass/phone.scss */
 #carousel .off {
   opacity: 0;
   display: none;
 }
-/* line 132, ../sass/phone.scss */
+/* line 135, ../sass/phone.scss */
 #carousel .heighlight {
   z-index: 1 !important;
   opacity: 1;
 }
-/* line 136, ../sass/phone.scss */
+/* line 139, ../sass/phone.scss */
 #carousel .text .slide-text {
   opacity: 1 !important;
 }
-/* line 140, ../sass/phone.scss */
+/* line 143, ../sass/phone.scss */
 #carousel #carousel-nav {
   position: fixed;
   top: 40px;
@@ -425,7 +430,7 @@ body {
   text-align: center;
   width: 100%;
 }
-/* line 146, ../sass/phone.scss */
+/* line 149, ../sass/phone.scss */
 #carousel #carousel-nav .slide-nav {
   display: inline-block;
   width: 14px;
@@ -444,45 +449,45 @@ body {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 156, ../sass/phone.scss */
+/* line 159, ../sass/phone.scss */
 #carousel #carousel-nav .active {
   background: #2b2b57;
 }
-/* line 161, ../sass/phone.scss */
+/* line 164, ../sass/phone.scss */
 #carousel #logo-slide {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 @media screen and (orientation: portrait) {
-  /* line 166, ../sass/phone.scss */
+  /* line 169, ../sass/phone.scss */
   #carousel #logo-slide > img {
     margin-top: 85px;
     width: 50%;
   }
-  /* line 170, ../sass/phone.scss */
+  /* line 173, ../sass/phone.scss */
   #carousel #logo-slide #rally-logo {
     position: absolute;
     left: 0;
     bottom: 100px;
   }
-  /* line 174, ../sass/phone.scss */
+  /* line 177, ../sass/phone.scss */
   #carousel #logo-slide #rally-logo svg, #carousel #logo-slide #rally-logo img {
     max-width: 50%;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 161, ../sass/phone.scss */
+  /* line 164, ../sass/phone.scss */
   #carousel #logo-slide {
     vertical-align: middle;
   }
-  /* line 182, ../sass/phone.scss */
+  /* line 185, ../sass/phone.scss */
   #carousel #logo-slide > img {
     width: 40%;
     margin-top: 100px;
     vertical-align: top;
   }
-  /* line 187, ../sass/phone.scss */
+  /* line 190, ../sass/phone.scss */
   #carousel #logo-slide #rally-logo {
     display: inline-block;
     width: 50%;
@@ -490,7 +495,7 @@ body {
     margin-top: -50px;
   }
 }
-/* line 196, ../sass/phone.scss */
+/* line 199, ../sass/phone.scss */
 #carousel #quote-container {
   position: fixed;
   left: 0;
@@ -498,7 +503,7 @@ body {
   bottom: 75px;
   text-align: center;
 }
-/* line 202, ../sass/phone.scss */
+/* line 205, ../sass/phone.scss */
 #carousel #quote-container .quote {
   margin: 0 1em 0 1em;
   font-size: 1.5em;
@@ -518,20 +523,20 @@ body {
   text-shadow: 0px 0px 10px black;
 }
 @media screen and (orientation: landscape) {
-  /* line 213, ../sass/phone.scss */
+  /* line 216, ../sass/phone.scss */
   #carousel #quote-container .quote {
     font-size: 1.2em;
   }
 }
-/* line 218, ../sass/phone.scss */
+/* line 221, ../sass/phone.scss */
 #carousel div:nth-child(1) .image-background {
   background-image: url("/assets/img/landing-1.jpg");
 }
-/* line 221, ../sass/phone.scss */
+/* line 224, ../sass/phone.scss */
 #carousel div:nth-child(2) .image-background {
   background-image: url("/assets/img/landing-2.jpg");
 }
-/* line 224, ../sass/phone.scss */
+/* line 227, ../sass/phone.scss */
 #carousel div:nth-child(3) .image-background {
   background-image: url("/assets/img/landing-3.jpg");
 }
@@ -546,7 +551,7 @@ body {
 	overflow-y: scroll;
 	@include vendorize(scrolling, touch);
  */
-/* line 239, ../sass/phone.scss */
+/* line 242, ../sass/phone.scss */
 #scroller-container {
   -webkit-overflow-scrolling: touch;
   z-index: 800;
@@ -557,7 +562,7 @@ body {
   display: block;
 }
 
-/* line 249, ../sass/phone.scss */
+/* line 252, ../sass/phone.scss */
 #container {
   position: relative;
   -webkit-overflow-scrolling: touch;
@@ -566,11 +571,11 @@ body {
   background-color: #2b2b57;
 }
 
-/* line 260, ../sass/phone.scss */
+/* line 263, ../sass/phone.scss */
 #about {
   position: relative;
 }
-/* line 262, ../sass/phone.scss */
+/* line 265, ../sass/phone.scss */
 #about #background-image-container {
   width: 100%;
   height: 100%;
@@ -578,7 +583,7 @@ body {
   left: 0;
   top: 0;
 }
-/* line 268, ../sass/phone.scss */
+/* line 271, ../sass/phone.scss */
 #about #background-image-container #background-1 {
   width: 100%;
   height: 100%;
@@ -591,14 +596,14 @@ body {
   background-size: cover;
   background-image: url("/assets/img/about-bg-2.jpg");
 }
-/* line 277, ../sass/phone.scss */
+/* line 280, ../sass/phone.scss */
 #about .title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 284, ../sass/phone.scss */
+/* line 287, ../sass/phone.scss */
 #about #imageBox {
   background-position: center;
   background-repeat: no-repeat;
@@ -617,21 +622,21 @@ body {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 295, ../sass/phone.scss */
+/* line 298, ../sass/phone.scss */
 #about #right p:nth-child(1) {
   margin: 0 8px 0 8px;
   font-weight: 700;
 }
-/* line 300, ../sass/phone.scss */
+/* line 303, ../sass/phone.scss */
 #about #right p {
   margin: 1.5em 1em 0 1em;
   color: #fff;
 }
-/* line 305, ../sass/phone.scss */
+/* line 308, ../sass/phone.scss */
 #about #right p:nth-child(9) {
   padding-bottom: 200px;
 }
-/* line 309, ../sass/phone.scss */
+/* line 312, ../sass/phone.scss */
 #about #dimond {
   position: absolute;
   z-index: 9;
@@ -650,7 +655,7 @@ body {
   -ms-transform-origin: 50% 50%;
   transform-origin: 50% 50%;
 }
-/* line 320, ../sass/phone.scss */
+/* line 323, ../sass/phone.scss */
 #about #dimond > div {
   width: 70%;
   height: 70%;
@@ -668,17 +673,17 @@ body {
   transform-origin: 50% 50%;
 }
 
-/* line 334, ../sass/phone.scss */
+/* line 337, ../sass/phone.scss */
 #attenders .main-coloum {
   color: #fff;
   text-align: center;
   padding-top: 3em;
 }
-/* line 338, ../sass/phone.scss */
+/* line 341, ../sass/phone.scss */
 #attenders .main-coloum h2 {
   margin-bottom: 0.5em;
 }
-/* line 342, ../sass/phone.scss */
+/* line 345, ../sass/phone.scss */
 #attenders .main-coloum svg {
   height: 30%;
   width: 30%;
@@ -686,59 +691,59 @@ body {
   display: block;
   fill: #fff;
 }
-/* line 349, ../sass/phone.scss */
+/* line 352, ../sass/phone.scss */
 #attenders .main-coloum #text {
   font-weight: lighter;
   margin: 0 1em 0 1em;
   text-align: left;
 }
-/* line 355, ../sass/phone.scss */
+/* line 358, ../sass/phone.scss */
 #attenders .main-coloum h3 {
   text-decoration: underline;
 }
-/* line 359, ../sass/phone.scss */
+/* line 362, ../sass/phone.scss */
 #attenders .main-coloum p {
   margin: 1.5em 0 0 0;
 }
-/* line 363, ../sass/phone.scss */
+/* line 366, ../sass/phone.scss */
 #attenders .main-coloum p:last-child {
   padding-bottom: 3em;
 }
-/* line 366, ../sass/phone.scss */
+/* line 369, ../sass/phone.scss */
 #attenders .main-coloum table {
   border-collapse: separate;
   width: 80%;
   font-size: 0.9em;
   margin: 1em 0;
 }
-/* line 372, ../sass/phone.scss */
+/* line 375, ../sass/phone.scss */
 #attenders .main-coloum table tr td {
   padding: 0.3em 0;
   width: 50%;
   border-top: solid #fff 1px;
 }
-/* line 379, ../sass/phone.scss */
+/* line 382, ../sass/phone.scss */
 #attenders .main-coloum table tr:last-child td {
   border-bottom: solid #fff 1px;
 }
-/* line 387, ../sass/phone.scss */
+/* line 390, ../sass/phone.scss */
 #attenders .background-coloums {
   display: none;
 }
-/* line 390, ../sass/phone.scss */
+/* line 393, ../sass/phone.scss */
 #attenders #guests {
   background-color: #ff572b;
 }
-/* line 393, ../sass/phone.scss */
+/* line 396, ../sass/phone.scss */
 #attenders #pilots {
   background-color: #ffb01a;
 }
-/* line 396, ../sass/phone.scss */
+/* line 399, ../sass/phone.scss */
 #attenders #drivers {
   background-color: #2b2b57;
 }
 
-/* line 401, ../sass/phone.scss */
+/* line 404, ../sass/phone.scss */
 #registration {
   background-position: center;
   background-repeat: no-repeat;
@@ -750,149 +755,149 @@ body {
   background-image: url("/assets/img/registration-1.jpg");
   color: #fff;
 }
-/* line 407, ../sass/phone.scss */
+/* line 410, ../sass/phone.scss */
 #registration .title {
   font-size: 2.3em;
   padding: 2em 0 1em 0;
   width: 100%;
   text-align: center;
 }
-/* line 414, ../sass/phone.scss */
+/* line 417, ../sass/phone.scss */
 #registration h2 {
   margin-bottom: 0.5em;
 }
-/* line 418, ../sass/phone.scss */
+/* line 421, ../sass/phone.scss */
 #registration .half {
   font-weight: lighter;
   margin: 0 1em 0 1em;
   text-align: center;
 }
-/* line 422, ../sass/phone.scss */
+/* line 425, ../sass/phone.scss */
 #registration .half p {
   text-align: left;
   margin: 1.5em 0 1em 0;
 }
-/* line 428, ../sass/phone.scss */
+/* line 431, ../sass/phone.scss */
 #registration #docs {
   font-weight: lighter;
   margin: 0 2em 0 2em;
   text-align: center;
 }
-/* line 432, ../sass/phone.scss */
+/* line 435, ../sass/phone.scss */
 #registration #docs > div {
   padding: 1em 0;
   display: inline-block;
   width: 50%;
   text-align: center;
 }
-/* line 438, ../sass/phone.scss */
+/* line 441, ../sass/phone.scss */
 #registration #docs div:last-child {
   width: 100%;
   padding-bottom: 3em;
 }
 
-/* line 445, ../sass/phone.scss */
+/* line 448, ../sass/phone.scss */
 #map {
   width: 100%;
   background-color: #ffb01a;
 }
-/* line 448, ../sass/phone.scss */
+/* line 451, ../sass/phone.scss */
 #map #map-container, #map #map-loading {
   display: none;
 }
-/* line 452, ../sass/phone.scss */
+/* line 455, ../sass/phone.scss */
 #map #map-hyper-location .title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 459, ../sass/phone.scss */
+/* line 462, ../sass/phone.scss */
 #map #map-hyper-location dl {
   padding: 3em 1em 0 1em;
 }
-/* line 462, ../sass/phone.scss */
+/* line 465, ../sass/phone.scss */
 #map #map-hyper-location dd {
   padding: 0.1em 0 1em 0.5em;
 }
 
-/* line 508, ../sass/phone.scss */
+/* line 511, ../sass/phone.scss */
 #contact {
   background: #ff572b;
   background-color: #ff572b;
   color: #ff572b;
   padding: 3em 0;
 }
-/* line 513, ../sass/phone.scss */
+/* line 516, ../sass/phone.scss */
 #contact p {
   margin-left: 2em;
 }
-/* line 516, ../sass/phone.scss */
+/* line 519, ../sass/phone.scss */
 #contact span, #contact a {
   color: #fff;
   font-size: 1em;
   display: block;
 }
-/* line 521, ../sass/phone.scss */
+/* line 524, ../sass/phone.scss */
 #contact span:first-child {
   text-transform: uppercase;
   font-weight: bolder;
 }
 
-/* line 528, ../sass/phone.scss */
+/* line 531, ../sass/phone.scss */
 #sponsors {
   background-color: #2b2b57;
   color: #fff;
   text-align: center;
 }
-/* line 532, ../sass/phone.scss */
+/* line 535, ../sass/phone.scss */
 #sponsors svg {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
-/* line 538, ../sass/phone.scss */
+/* line 541, ../sass/phone.scss */
 #sponsors #title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 545, ../sass/phone.scss */
+/* line 548, ../sass/phone.scss */
 #sponsors h3 {
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 551, ../sass/phone.scss */
+/* line 554, ../sass/phone.scss */
 #sponsors .sponsor {
   padding-top: 3em;
 }
-/* line 553, ../sass/phone.scss */
+/* line 556, ../sass/phone.scss */
 #sponsors .sponsor img {
   vertical-align: middle;
   max-height: 100px;
 }
-/* line 558, ../sass/phone.scss */
+/* line 561, ../sass/phone.scss */
 #sponsors .sponsor:last-child {
   padding-bottom: 3em;
 }
-/* line 561, ../sass/phone.scss */
+/* line 564, ../sass/phone.scss */
 #sponsors > div:nth-child(3) img {
   max-width: 75%;
   padding: 5%;
 }
-/* line 565, ../sass/phone.scss */
+/* line 568, ../sass/phone.scss */
 #sponsors > div:nth-child(4) img {
   max-width: 40%;
   padding: 5%;
 }
-/* line 569, ../sass/phone.scss */
+/* line 572, ../sass/phone.scss */
 #sponsors > div:nth-child(5) img {
   max-width: 30%;
   padding: 1.5%;
 }
-/* line 573, ../sass/phone.scss */
+/* line 576, ../sass/phone.scss */
 #sponsors > div:nth-child(6) img {
   max-width: 23%;
   padding: 1%;
