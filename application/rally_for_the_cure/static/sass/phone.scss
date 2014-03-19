@@ -43,6 +43,13 @@ body{
 			width: 100%;
 			display: inline-block;
 		}
+		img{ max-height: 25px;}
+		#social-icons{
+			a{
+				text-align: center;
+				width: 22%;
+			}
+		}
  	}
 	.last-button{
 		height: 40px;
@@ -325,7 +332,6 @@ body{
 			height: 70%;
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url("/assets/icons/down-arrow-black.png");
 			background-size: 40px;
 			@include rotate(-45deg);
 			@include origin(50% 50%);
@@ -459,11 +465,19 @@ body{
 			width: 100%;
 			text-align: center;
 		}
-		dl{
-			padding: 3em 1em 0 1em;
+		.guests{
+			background-color: $orange;
 		}
-		dd{
-			padding: 0.1em 0 1em 0.5em;
+		.pilots{
+			background-color: $yellow;
+		}
+		.drivers{
+			background-color: $blue;
+		}
+		li{
+			a{
+				padding: 0.1em 0 1em 0.5em;
+			}
 		}
 	}
 	// #map-container{

@@ -49,8 +49,11 @@
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
 				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
 				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
+				{% if desktop%}{% else %}<li id="social-icons"><a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
+		<a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
+		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a></li>{% endif %}
 			</ul>
-				{% if desktop%}<div id="background-colour"></div>{% else %}<div class="last-button"></div>{% endif %}
+				{% if desktop%}<div id="background-colour"></div>{% else %}<div class="last-button" style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>{% endif %}
 		</div>
 	{% if desktop%}
 	</nav><!-- remove for phone -->
@@ -260,7 +263,7 @@
 				<h3>Platinum</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Platinum" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
+						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -268,7 +271,7 @@
 				<h3>Gold</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Gold" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
+						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -276,7 +279,7 @@
 				<h3>Silver</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Silver" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
+						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -284,7 +287,7 @@
 				<h3>Bronze</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Bronze" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
+						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
