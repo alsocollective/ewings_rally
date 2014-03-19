@@ -832,88 +832,97 @@ body {
 #map #map-hyper-location .drivers {
   background-color: #2b2b57;
 }
-/* line 478, ../sass/phone.scss */
+/* line 477, ../sass/phone.scss */
+#map #map-hyper-location ul {
+  padding: 3em;
+}
+/* line 480, ../sass/phone.scss */
+#map #map-hyper-location li {
+  width: 90%;
+}
+/* line 482, ../sass/phone.scss */
 #map #map-hyper-location li a {
-  padding: 0.1em 0 1em 0.5em;
+  padding: 5%;
+  display: inline-block;
 }
 
-/* line 525, ../sass/phone.scss */
+/* line 530, ../sass/phone.scss */
 #contact {
   background: #ff572b;
   background-color: #ff572b;
   color: #ff572b;
   padding: 3em 0;
 }
-/* line 530, ../sass/phone.scss */
+/* line 535, ../sass/phone.scss */
 #contact p {
   margin-left: 2em;
 }
-/* line 533, ../sass/phone.scss */
+/* line 538, ../sass/phone.scss */
 #contact span, #contact a {
   color: #fff;
   font-size: 1em;
   display: block;
 }
-/* line 538, ../sass/phone.scss */
+/* line 543, ../sass/phone.scss */
 #contact span:first-child {
   text-transform: uppercase;
   font-weight: bolder;
 }
 
-/* line 545, ../sass/phone.scss */
+/* line 550, ../sass/phone.scss */
 #sponsors {
   background-color: #2b2b57;
   color: #fff;
   text-align: center;
 }
-/* line 549, ../sass/phone.scss */
+/* line 554, ../sass/phone.scss */
 #sponsors svg {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
-/* line 555, ../sass/phone.scss */
+/* line 560, ../sass/phone.scss */
 #sponsors #title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 562, ../sass/phone.scss */
+/* line 567, ../sass/phone.scss */
 #sponsors h3 {
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 568, ../sass/phone.scss */
+/* line 573, ../sass/phone.scss */
 #sponsors .sponsor {
   padding-top: 3em;
 }
-/* line 570, ../sass/phone.scss */
+/* line 575, ../sass/phone.scss */
 #sponsors .sponsor img {
   vertical-align: middle;
   max-height: 100px;
 }
-/* line 575, ../sass/phone.scss */
+/* line 580, ../sass/phone.scss */
 #sponsors .sponsor:last-child {
   padding-bottom: 3em;
 }
-/* line 578, ../sass/phone.scss */
+/* line 583, ../sass/phone.scss */
 #sponsors > div:nth-child(3) img {
   max-width: 75%;
   padding: 5%;
 }
-/* line 582, ../sass/phone.scss */
+/* line 587, ../sass/phone.scss */
 #sponsors > div:nth-child(4) img {
   max-width: 40%;
   padding: 5%;
 }
-/* line 586, ../sass/phone.scss */
+/* line 591, ../sass/phone.scss */
 #sponsors > div:nth-child(5) img {
   max-width: 30%;
   padding: 1.5%;
 }
-/* line 590, ../sass/phone.scss */
+/* line 595, ../sass/phone.scss */
 #sponsors > div:nth-child(6) img {
   max-width: 23%;
   padding: 1%;

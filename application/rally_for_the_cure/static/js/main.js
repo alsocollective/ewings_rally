@@ -93,8 +93,12 @@ function setURLOnScroll(event){
 
 function menu_nav_click(event){
 	event.preventDefault();
-
+	console.log("nav click");
+	console.log(menu_nav_click)
 	if(slideMenu && slideMenu.clickable()){
+		console.log("mobile prevent because...");
+		console.log(slideMenu)
+		console.log(slideMenu.clickable())
 		event.preventDefault
 		return false;
 	}
@@ -543,14 +547,23 @@ function stopScrollIfScrolling(event){
 }
 
 function animateScroll(element){
+	console.log("element passed into animate scroll was...")
+	console.log($(element).offset().top);
 	if(scrolling){
+		console.log("is scrolling");
 		return false;
 	}
 	if(element){
 		scrolling = true;
-		$('html, body').animate({scrollTop :  $(element).offset().top},500,function(){
-			scrolling = false;
-		});
+		if(!deskTop){
+			$('html, body, #scroller-container').animate({scrollTop :  $(element).offset().top},500,function(){
+				scrolling = false;
+			});
+		} else {
+			$('html, body').animate({scrollTop :  $(element).offset().top},500,function(){
+				scrolling = false;
+			});
+		}
 	} else {
 		console.log("ERROR: No element passed into animateScroll");
 	}

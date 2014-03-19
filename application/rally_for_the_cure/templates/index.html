@@ -43,9 +43,9 @@
 		<div id="nav-container">
 			<ul>
 				<li><a href="about" class="nav-clicker">About</a></li>
-				<li><a href="attenders" class="nav-clicker">Pilot</a></li>
-				<li><a href="attenders" class="nav-clicker">Drivers</a></li>
-				<li><a href="attenders" class="nav-clicker">Guests</a></li>
+				<li><a href="pilots" class="nav-clicker">Pilot</a></li>
+				<li><a href="drivers" class="nav-clicker">Drivers</a></li>
+				<li><a href="guests" class="nav-clicker">Guests</a></li>
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
 				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
 				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
@@ -247,7 +247,7 @@
 				<h2 class="title">Map Links</h2>
 				<ul>
 				{% for location in map_locations %}
-					<li class="{{location.location_type}}"><a href="location.link_url">{{location.title|safe}}</a></li>
+					<li class="{{location.location_type}}"><a href="{{location.link_url}}">{{location.title|safe}}</a></li>
 				{% endfor %}
 				</ul>
 			</div>

@@ -474,9 +474,14 @@ body{
 		.drivers{
 			background-color: $blue;
 		}
+		ul{
+			padding: 3em;
+		}
 		li{
+			width: 90%;
 			a{
-				padding: 0.1em 0 1em 0.5em;
+				padding: 5%;
+				display: inline-block;
 			}
 		}
 	}
