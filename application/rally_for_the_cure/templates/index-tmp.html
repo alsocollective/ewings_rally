@@ -28,7 +28,7 @@
 <body class="yellow-nav">
 
 
-<div id="loading-screen" style="background-image: url('{{ MEDIA_URL }}{{slides.0.background_image}}')"></div>
+<div id="loading-screen" style="background-image: url('http://also-static.com/rallyforthecure/media/uploaded/img/landing-2.jpg')"></div>
 <div id="nav-button">
 	<div id="nav-button-container">
 		<div class="line"></div>
@@ -46,33 +46,42 @@
 				<li><a href="attenders" class="nav-clicker">Drivers</a></li>
 				<li><a href="attenders" class="nav-clicker">Guests</a></li>
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
-				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
 				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
+				<li><a href="contact" class="nav-clicker">Contact</a></li>
+				<li><a href="http://donate.com" class="nav-clicker">Donate</a></li>
 			</ul>
 			<div id="background-colour"></div><!-- switch for phone --> <!-- <div class="last-button"></div> -->
 		</div>
 	</nav><!-- remove for phone -->
 
+<div id="social-media-buttons">
+	<div id="nav-button-container">
+		<a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
+		<a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
+		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a>
+	</div>
+</div>
 
 
 	<div id="carousel" class="section">
 		<div id="carousel-nav">
-			{% for slide in slides %}
-				<div class="slide-nav {% if forloop.first %}active{% endif %}" id="{{forloop.counter}}"></div>
-			{% endfor %}
-
+			<div class="slide-nav active" id="1"></div>
+			<div class="slide-nav" id="2"></div>
+			<div class="slide-nav" id="3"></div>
+			<div class="slide-nav" id="4"></div>
+			<div class="slide-nav" id="5"></div>
+			<div class="slide-nav" id="6"></div>
+			<div class="slide-nav" id="7"></div>
 		</div>
-		{% for slide in slides %}
-		<div class="slide {% if forloop.first %}heighlight{% else %} off{% endif %}">
+		<div class="slide heighlight">
 			<div class="slide-container">
-				<div class="image-background" style="background-image: url('{{ MEDIA_URL }}{{slide.background_image}}')"></div>
+				<div class="image-background"></div>
 				<div class="slide-text">
-					{% if forloop.first %}
 					<div id="logo-slide">
-						<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+						<img src="http://also-static.com/rallyforthecure/static/assets/logos/ewings-logo.png" id="ewings-logo">
 						<div id="rally-logo">
 							<!--[if lt IE 9]>
-								<img src="{% static "assets/icons/rally-logo.png"%}">
+								<img src="/assets/icons/rally-logo.png">
 							<![endif]-->
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 404.766 269.786" preserveAspectRatio="xMaxYMax">
 							<path fill="#FFFFFF" d="M102.308,138.567v13.178c6.277-0.027,12.56,0.073,18.847,0.282v-13.46H102.308z M140.001,138.567v14.379 c6.282,0.395,12.566,0.867,18.852,1.395v-15.772L140.001,138.567L140.001,138.567z M64.604,138.567v15.139 c6.277-0.658,12.562-1.137,18.852-1.453v-13.686H64.604z M273.49,147.107h18.848v-18.853H273.49V147.107z M26.91,138.567v18.848 h12.429c2.139-0.41,4.279-0.793,6.42-1.151v-17.695L26.91,138.567L26.91,138.567z M8.06,157.415v7.936 c6.273-2.014,12.557-3.754,18.85-5.264v-2.672H8.06z M235.793,147.107h18.852v-18.853h-18.852V147.107z M121.154,138.567h18.847 v-18.852h-18.847V138.567z M83.457,138.567h18.85v-18.852h-18.85V138.567z M64.604,119.715H45.759v18.852h18.846L64.604,119.715 L64.604,119.715z M8.06,138.567h18.851v-18.852H8.06V138.567z M158.854,100.863h-18.852v18.853h18.852V100.863z M83.457,100.863 H64.604v18.853h18.852L83.457,100.863L83.457,100.863z M121.154,100.863h-18.847v18.853h18.847V100.863z M311.188,147.107h18.854 v-18.853h-18.854V147.107z M386.588,109.404h-18.852v18.851h18.852V109.404z M254.645,109.404v-2.439 c-6.281-0.412-12.565-0.898-18.852-1.438v3.878L254.645,109.404L254.645,109.404z M140.001,100.863v-4.23 c-6.285-0.412-12.568-0.745-18.847-0.979v5.209H140.001z M292.338,109.404v-1.092c-6.277-0.004-12.561-0.135-18.848-0.368v1.46 H292.338z M330.043,109.404v-2.812c-6.277,0.613-12.562,1.043-18.854,1.321v1.491H330.043z M102.308,100.863v-5.574 c-6.289-0.002-12.573,0.121-18.851,0.402v5.172H102.308z M45.759,119.715v-18.853h-8.085c-3.591,0.68-7.179,1.43-10.764,2.258 v16.595H45.759L45.759,119.715z M64.604,100.863v-3.846c-6.289,0.616-12.571,1.422-18.846,2.426v1.42H64.604z M292.338,147.107 v17.651c6.289,0.033,12.572-0.062,18.852-0.307v-17.346L292.338,147.107L292.338,147.107z M311.188,109.404h-18.851v18.851h18.851 V109.404z M273.49,109.404h-18.848v18.851h18.848V109.404z M348.891,109.404h-18.848v18.851h18.848V109.404z M367.736,147.107 v10.345c6.293-1.396,12.576-3.029,18.852-4.916v-5.429H367.736z M367.736,109.404v-8.908c-6.273,1.447-12.557,2.667-18.848,3.673 v5.235H367.736z M254.645,147.107v16.171c6.284,0.43,12.567,0.782,18.847,1.039v-17.21H254.645z M348.891,147.107h18.846v-18.853 h-18.846V147.107z M348.891,147.107v13.853c-6.275,0.955-12.559,1.705-18.848,2.279v-16.132H348.891z"/>
@@ -98,18 +107,80 @@
 							</svg>
 						</div>
 					</div>
-					{% else %}
-					<div id="quote-container">
-						<div id="logo-slide">
-							<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
-						</div>
-						<p class="quote">{{slide.quote_text}}</p>
-					</div>
-					{% endif %}
 				</div>
 			</div>
 		</div>
-		{% endfor %}
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<img src="http://also-static.com/rallyforthecure/static/assets/logos/ewings-logo.png" id="ewings-logo">
+						<p class="quote">
+							“In 1998 I lost my younger brother Tony to Ewings Sarcoma. He was not only my brother but my best friend.  After going through this, let's just say I live for 2 each day and I don't sweat the small stuff!”
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<p class="quote">
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<p class="quote">
+							“Reid would indeed be proud to know that he was instrumental in launching this important mission and that Ewings Sarcoma will finally be given both a voice and the dedicated research it so greatly deserves. Through Reid’s passion for flying and Tony’s love of Cars, the ECFC Rally for the Cure Car &amp; Air Rally was born. Here’s to our 5th Annual!”
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<p class="quote">
+							 “My daughter, Kristy–Ann taught us how to live, and to cherish everything you have and who is important in your life. She taught us perspective above all. To see her deal with cancer, and the battle she endured, taught us what courage really was. And while our everyday aches and pains seem monumental to us at the time, are nothing compared to what a Ewings cancer patient goes through.”
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<p class="quote">
+							“The Rally for the Cure is a wonderful way to raise awareness and to help with research grants to one day find a cure for Ewing's sarcoma. The Foundation has helped a great deal in the years since its inception with both of these things. There was nowhere to go for information once your child was diagnosed or to find other families to talk to and share stories and support one another. Now with the Foundation’s dedication to funding research, all this has changed.”
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="slide off">
+			<div class="slide-container">
+				<div class="image-background"></div>
+				<div class="slide-text">
+					<div id="quote-container">
+						<p class="quote">
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 <div id="scroller-container">
@@ -120,14 +191,14 @@
 				<div style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>
 			</div>
 			<div id="background-image-container">
-				<div id="background-1" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_1}}')"></div>
+				<div id="background-1" style="background-image: url('http://also-static.com/rallyforthecure/media/uploaded/img/about-bg-1.jpg')"></div>
 	 			<div id="background-2" data-top-bottom="transform: translateX(0%) skewX(-45deg)" data-500-bottom="transform: translateX(50%) skewX(-45deg)" >
-					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_2}}')"></div>
+					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('http://also-static.com/rallyforthecure/media/uploaded/img/about-bg-2.jpg')"></div>
 				</div>
 			</div>
 			<div class="title">INSPIRATION</div>
 			<div id="left" >
-				<div id="imageBox" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_portrait}}')"></div>
+				<div id="imageBox" style="background-image: url('http://also-static.com/rallyforthecure/media/uploaded/img/about-prt.jpg')"></div>
 			</div><div id="right">
 				<p>{{data.inspiration_top|safe}}
 				</p>
@@ -200,7 +271,7 @@
 				</svg>
 			</div>
 		</div>
-		<div id="registration" class="section snap" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_registration}}')">
+		<div id="registration" class="section snap" style="background-image: url('http://also-static.com/rallyforthecure/media/uploaded/img/registration-1.jpg')">
 			<div class="title">Registration</div>
 			<div id="paypal" class="half">
 				<h2><a href="{{data.online_payment_link}}">Online Payment</a></h2>
@@ -248,35 +319,31 @@
 			<h2 id="title">Sponsors</h2>
 			<div class="sponsor" id="platinum">
 				<h3>Platinum</h3>
-				{% for sponsor in sponsors%}
-					{% if sponsor.status == "Platinum" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
-					{% endif %}
-				{% endfor %}
+				<a href="http://wwww.torontoairways.com" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/toairways-logo.png"></a>
+				<a href="" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/copa-logo.png"></a>
+				<a href="https://www.mmmeatshops.com/en/index.asp" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/mm-logo.png"></a>
 			</div>
 			<div class="sponsor" id="gold">
 				<h3>Gold</h3>
-				{% for sponsor in sponsors%}
-					{% if sponsor.status == "Gold" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
-					{% endif %}
-				{% endfor %}
+				<a href="" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/also-logo.png"></a>
+				<a href="" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/tirestires.png"></a>
+				<a href="http://www.apexaircraft.com/about.htm" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/APEX.png"></a>
+				<a href="http://www.apexaircraft.com/about.htm" target="_blank"><img src="http://also-static.com/rallyforthecure/media/uploaded/img/emmatemp.png"></a>
 			</div>
 			<div class="sponsor" id="silver">
 				<h3>Silver</h3>
-				{% for sponsor in sponsors%}
-					{% if sponsor.status == "Silver" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
-					{% endif %}
-				{% endfor %}
+				<a href="" target="_blank"><img src=""></a>
+				<a href="" target="_blank"><img src=""></a>
+				<a href="" target="_blank"><img src=""></a>
 			</div>
 			<div class="sponsor" id="bronze">
 				<h3>Bronze</h3>
-				{% for sponsor in sponsors%}
-					{% if sponsor.status == "Bronze" %}
-						<img src="{{ MEDIA_URL }}{{sponsor.logo}}">
-					{% endif %}
-				{% endfor %}
+				<a href="" target="_blank"><img src=""></a>
+				<a href="" target="_blank"><img src=""></a>
+				<a href="" target="_blank"><img src=""></a>
+			</div>
+			<div class="sponsor">
+				<a href="mailto:{{data.conact_email}}">You too can be a supporter!</a>
 			</div>
 		</div>
 		<div id="contact">
@@ -288,7 +355,6 @@
 					</p>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
@@ -300,7 +366,13 @@
 		{% if forloop.last %}{% else %},{% endif %}
 	{% endfor %}
 	]
+
+	{% for slide in slides %}
+	var image_{{forloop.counter}} = new Image();
+	image_{{forloop.counter}}.src = "{{ MEDIA_URL }}{{slide.background_image}}";
+	{% endfor %}
 </script>
+
 <script type="text/javascript" src="{% static "js/main.js"%}"></script>
 </body>
 </html>
