@@ -47,8 +47,7 @@
 				<li><a href="drivers" class="nav-clicker">Drivers</a></li>
 				<li><a href="guests" class="nav-clicker">Guests</a></li>
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
-				<!--<li><a href="contact" class="nav-clicker">Contact</a></li>-->
-				<li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
+				<li><a href="http://ewingscancer.ca/donate/" target="Ewings Donate">Donate</a></li><li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
 				{% if desktop%}{% else %}<li id="social-icons"><a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
 		<a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
 		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a></li>{% endif %}
@@ -62,9 +61,9 @@
 
 <div id="social-media-buttons">
 	<div id="nav-button-container">
-		<a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
-		<a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
-		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a>
+		<a href="http://instagram.com/ewingscancer" target="Ewings Instagram"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
+		<a href="https://twitter.com/ewingscancer" target="Ewings Twitter"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
+		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada" target="Ewings Facebook"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a>
 	</div>
 </div>
 
@@ -216,26 +215,26 @@
 		<div id="registration" class="section snap" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_registration}}')">
 			<div class="title">Registration</div>
 			<div id="paypal" class="half">
-				<h2><a href="{{data.online_payment_link}}">Online Payment</a></h2>
+				<h2><a href="https://guestlistapp.com/events/236055" target="Payment">Online Payment</a></h2>
 				<p>{{data.online_payment_text}}</p>
 
 			</div><div id="cheque" class="half">
-				<h2><a href="https://guestlistapp.com/events/236055">Cheque</a></h2>
+				<h2><a href="{{data.online_payment_link}}" target="Payment">Cheque</a></h2>
 				<p>{{data.cheque_payment_text}}</p>
 			</div>
 			<div id="docs">
 				<h2>Required Documents</h2><br>
 				<div>
 					<img src="{% static "assets/icons/ic-waiver.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.waiver_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}files/{{data.waiver_form}}" target="Waiver">Download</a></h3>
 					<p>Waiver Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-pledge.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.pledge_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}files/{{data.pledge_form}}" target="Pledge">Download</a></h3>
 					<p>Pledge Form</p>
 				</div><div>
 					<img src="{% static "assets/icons/ic-registration.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}uploaded/{{data.registration_form}}">Download</a></h3>
+					<h3><a href="{{ MEDIA_URL }}files/{{data.registration_form}}" target="Registration">Download</a></h3>
 					<p>Registration Form</p>
 				</div>
 			</div>
@@ -263,7 +262,7 @@
 				<h3>Platinum</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Platinum" %}
-						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
+						<a href="{{sponsor.link}}" target="sponsor.title"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -271,7 +270,7 @@
 				<h3>Gold</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Gold" %}
-						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
+						<a href="{{sponsor.link}}" target="sponsor.title"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -279,7 +278,7 @@
 				<h3>Silver</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Silver" %}
-						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
+						<a href="{{sponsor.link}}" target="sponsor.title"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -287,7 +286,7 @@
 				<h3>Bronze</h3>
 				{% for sponsor in sponsors%}
 					{% if sponsor.status == "Bronze" %}
-						<a href="{{sponsor.link}}"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
+						<a href="{{sponsor.link}}" target="sponsor.title"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
 			</div>
@@ -297,7 +296,7 @@
 			<div id="content">
 				<div>
 					<p>
-						<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="mailto:{{data.conact_email}}">{{data.conact_email}}</a> | <a href="tel:{{data.conact_phone}}">Tel: {{data.conact_phone}}</a>
+						<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="mailto:{{data.conact_email}}" target="Mail To">{{data.conact_email}}</a> | <a href="tel:{{data.conact_phone}}">Tel: {{data.conact_phone}}</a>
 					</p>
 				</div>
 			</div>

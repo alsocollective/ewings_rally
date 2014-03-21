@@ -383,6 +383,7 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
+			background-color: $yellow;
 			// background-image: url("/assets/img/about-bg-1.jpg");
 		}
 		#background-2{
@@ -447,7 +448,8 @@
 		svg{
 			display: inline-block;
 			fill:#fff;
-			max-height: 12%;
+			//max-height: 12%;
+			height: 150px
 			max-width: 150px;
 			padding-bottom: 0.75em;
 		}
@@ -729,7 +731,7 @@
 		@extend .body-type; //for the type size
 		text-transform: uppercase;
 		font-weight: bolder;
-		font-size: 1.4em;
+		font-size: 1.8em;
 		padding: 1em 0;
 	}
 
