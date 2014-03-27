@@ -65,6 +65,7 @@
 		<a href="http://instagram.com/ewingscancer" target="Ewings Instagram"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
 		<a href="https://twitter.com/ewingscancer" target="Ewings Twitter"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
 		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada" target="Ewings Facebook"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a>
+		<a href="#donate" class="donate-button">Donate</a>
 	</div>
 </div>
 
@@ -86,8 +87,10 @@
 				<div class="slide-text">
 					{% if forloop.first %}
 					<div id="logo-slide">
-						<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
-						<div id="rally-logo">
+							{% if slide.show_logo %}
+								<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+							{% endif %}
+							<div id="rally-logo">
 							<!--[if lt IE 9]>
 								<img src="{% static "assets/icons/rally-logo.png"%}">
 							<![endif]-->
@@ -118,7 +121,9 @@
 					{% else %}
 					<div id="quote-container">
 						<div id="logo-slide">
-							<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+							{% if slide.show_logo %}
+								<img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo">
+							{% endif %}
 						</div>
 						<p class="quote">{{slide.quote_text|safe}}</p>
 					</div>
@@ -296,6 +301,9 @@
 						<a href="{{sponsor.link}}" target="sponsor.title"><img src="{{ MEDIA_URL }}{{sponsor.logo}}"></a>
 					{% endif %}
 				{% endfor %}
+			</div>
+			<div class="sponsor" id="add_logo">
+				You can be a sponsor
 			</div>
 		</div>
 		<div id="contact">

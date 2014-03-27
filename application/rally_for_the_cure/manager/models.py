@@ -6,6 +6,7 @@ class Slide(models.Model):
 	quote_text = models.TextField(max_length=1000,blank=True)
 	background_image = ThumbnailerImageField(upload_to='uploaded/img')
 	order = models.IntegerField(default=99)
+	show_logo = models.BooleanField(default = False)
 	def __unicode__(self):
 		return self.title
 

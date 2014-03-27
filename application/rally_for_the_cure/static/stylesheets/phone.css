@@ -234,6 +234,17 @@ body #djDebug {
   color: #d8741a;
 }
 
+/* line 178, ../sass/base.scss */
+.donate-button {
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #fff;
+  position: absolute;
+  right: -60px;
+  top: 0px;
+  padding: 0.2em 0.3em 0.2em 0.3em;
+}
+
 /* line 3, ../sass/phone.scss */
 body {
   overflow: hidden;
@@ -480,45 +491,26 @@ body {
   height: 100%;
   width: 100%;
   text-align: center;
+  vertical-align: top;
+  vertical-align: middle;
 }
-@media screen and (orientation: portrait) {
-  /* line 182, ../sass/phone.scss */
-  #carousel #logo-slide > img {
-    margin-top: 85px;
-    width: 50%;
-    padding-bottom: 2em;
-  }
-  /* line 187, ../sass/phone.scss */
-  #carousel #logo-slide #rally-logo {
-    position: absolute;
-    left: 0;
-    bottom: 100px;
-  }
-  /* line 191, ../sass/phone.scss */
-  #carousel #logo-slide #rally-logo svg, #carousel #logo-slide #rally-logo img {
-    max-width: 50%;
-  }
+/* line 200, ../sass/phone.scss */
+#carousel #logo-slide #ewings-logo {
+  width: 30%;
+  position: absolute;
+  bottom: 5em;
+  left: 3.5em;
 }
-@media screen and (orientation: landscape) {
-  /* line 177, ../sass/phone.scss */
-  #carousel #logo-slide {
-    vertical-align: middle;
-  }
-  /* line 199, ../sass/phone.scss */
-  #carousel #logo-slide > img {
-    width: 40%;
-    margin-top: 100px;
-    vertical-align: top;
-  }
-  /* line 204, ../sass/phone.scss */
-  #carousel #logo-slide #rally-logo {
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-    margin-top: -50px;
-  }
+/* line 206, ../sass/phone.scss */
+#carousel #logo-slide #rally-logo {
+  position: absolute;
+  display: inline-block;
+  height: auto;
+  bottom: 4em;
+  right: 3em;
+  width: 30%;
 }
-/* line 213, ../sass/phone.scss */
+/* line 216, ../sass/phone.scss */
 #carousel #quote-container {
   position: fixed;
   left: 0;
@@ -526,7 +518,7 @@ body {
   bottom: 75px;
   text-align: center;
 }
-/* line 219, ../sass/phone.scss */
+/* line 222, ../sass/phone.scss */
 #carousel #quote-container .quote {
   font-size: 1.2em;
   text-align: left;
@@ -545,33 +537,33 @@ body {
   text-shadow: 0px 0px 10px black;
 }
 @media screen and (orientation: portrait) {
-  /* line 219, ../sass/phone.scss */
+  /* line 222, ../sass/phone.scss */
   #carousel #quote-container .quote {
     margin: 0 1em 0 1em;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 219, ../sass/phone.scss */
+  /* line 222, ../sass/phone.scss */
   #carousel #quote-container .quote {
     max-width: 40em;
     margin: auto;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 236, ../sass/phone.scss */
+  /* line 239, ../sass/phone.scss */
   #carousel #quote-container .quote {
     font-size: 1.2em;
   }
 }
-/* line 241, ../sass/phone.scss */
+/* line 244, ../sass/phone.scss */
 #carousel div:nth-child(1) .image-background {
   background-image: url("/assets/img/landing-1.jpg");
 }
-/* line 244, ../sass/phone.scss */
+/* line 247, ../sass/phone.scss */
 #carousel div:nth-child(2) .image-background {
   background-image: url("/assets/img/landing-2.jpg");
 }
-/* line 247, ../sass/phone.scss */
+/* line 250, ../sass/phone.scss */
 #carousel div:nth-child(3) .image-background {
   background-image: url("/assets/img/landing-3.jpg");
 }
@@ -586,7 +578,7 @@ body {
 	overflow-y: scroll;
 	@include vendorize(scrolling, touch);
  */
-/* line 262, ../sass/phone.scss */
+/* line 265, ../sass/phone.scss */
 #scroller-container {
   -webkit-overflow-scrolling: touch;
   z-index: 800;
@@ -597,7 +589,7 @@ body {
   display: block;
 }
 
-/* line 272, ../sass/phone.scss */
+/* line 275, ../sass/phone.scss */
 #container {
   position: relative;
   -webkit-overflow-scrolling: touch;
@@ -606,11 +598,11 @@ body {
   background-color: #2b2b57;
 }
 
-/* line 283, ../sass/phone.scss */
+/* line 286, ../sass/phone.scss */
 #about {
   position: relative;
 }
-/* line 285, ../sass/phone.scss */
+/* line 288, ../sass/phone.scss */
 #about #background-image-container {
   width: 100%;
   height: 100%;
@@ -618,7 +610,7 @@ body {
   left: 0;
   top: 0;
 }
-/* line 291, ../sass/phone.scss */
+/* line 294, ../sass/phone.scss */
 #about #background-image-container #background-1 {
   width: 100%;
   height: 100%;
@@ -631,14 +623,14 @@ body {
   background-size: cover;
   background-image: url("/assets/img/about-bg-2.jpg");
 }
-/* line 300, ../sass/phone.scss */
+/* line 303, ../sass/phone.scss */
 #about .title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 307, ../sass/phone.scss */
+/* line 310, ../sass/phone.scss */
 #about #imageBox {
   background-position: center;
   background-repeat: no-repeat;
@@ -657,21 +649,21 @@ body {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
-/* line 319, ../sass/phone.scss */
+/* line 322, ../sass/phone.scss */
 #about #right p:nth-child(1) {
   margin: 0 8px 0 8px;
   font-weight: 700;
 }
-/* line 324, ../sass/phone.scss */
+/* line 327, ../sass/phone.scss */
 #about #right p {
   margin: 1.5em 1em 0 1em;
   color: #fff;
 }
-/* line 329, ../sass/phone.scss */
+/* line 332, ../sass/phone.scss */
 #about #right p:nth-child(9) {
   padding-bottom: 200px;
 }
-/* line 334, ../sass/phone.scss */
+/* line 337, ../sass/phone.scss */
 #about #dimond-container {
   position: absolute;
   top: -50px;
@@ -680,7 +672,7 @@ body {
   text-align: center;
   z-index: 99;
 }
-/* line 342, ../sass/phone.scss */
+/* line 345, ../sass/phone.scss */
 #about #dimond {
   display: inline-block;
   width: 100px;
@@ -697,7 +689,7 @@ body {
   transform-origin: 50% 50%;
   text-align: left;
 }
-/* line 351, ../sass/phone.scss */
+/* line 354, ../sass/phone.scss */
 #about #dimond > div {
   width: 70%;
   height: 70%;
@@ -714,89 +706,90 @@ body {
   transform-origin: 50% 50%;
 }
 
-/* line 365, ../sass/phone.scss */
+/* line 368, ../sass/phone.scss */
 #attenders .main-coloum {
   color: #fff;
   text-align: center;
   padding-top: 3em;
 }
-/* line 369, ../sass/phone.scss */
+/* line 372, ../sass/phone.scss */
 #attenders .main-coloum h2 {
   margin-bottom: 0.5em;
 }
-/* line 373, ../sass/phone.scss */
+/* line 376, ../sass/phone.scss */
 #attenders .main-coloum svg {
   height: 30%;
   width: 30%;
   margin: 0 auto;
   display: block;
   fill: #fff;
+  max-width: 200px;
 }
-/* line 380, ../sass/phone.scss */
+/* line 384, ../sass/phone.scss */
 #attenders .main-coloum #text {
   font-weight: lighter;
   text-align: left;
 }
 @media screen and (orientation: portrait) {
-  /* line 380, ../sass/phone.scss */
+  /* line 384, ../sass/phone.scss */
   #attenders .main-coloum #text {
     margin: 0 1em 0 1em;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 380, ../sass/phone.scss */
+  /* line 384, ../sass/phone.scss */
   #attenders .main-coloum #text {
     max-width: 40em;
     margin: auto;
   }
 }
-/* line 393, ../sass/phone.scss */
+/* line 397, ../sass/phone.scss */
 #attenders .main-coloum h3 {
   text-decoration: underline;
 }
-/* line 397, ../sass/phone.scss */
+/* line 401, ../sass/phone.scss */
 #attenders .main-coloum p {
   margin: 1.5em 0 0 0;
 }
-/* line 401, ../sass/phone.scss */
+/* line 405, ../sass/phone.scss */
 #attenders .main-coloum p:last-child {
   padding-bottom: 3em;
 }
-/* line 404, ../sass/phone.scss */
+/* line 408, ../sass/phone.scss */
 #attenders .main-coloum table {
   border-collapse: separate;
   width: 80%;
   font-size: 0.9em;
   margin: 1em 0;
 }
-/* line 410, ../sass/phone.scss */
+/* line 414, ../sass/phone.scss */
 #attenders .main-coloum table tr td {
   padding: 0.3em 0;
   width: 50%;
   border-top: solid #fff 1px;
 }
-/* line 417, ../sass/phone.scss */
+/* line 421, ../sass/phone.scss */
 #attenders .main-coloum table tr:last-child td {
   border-bottom: solid #fff 1px;
 }
-/* line 425, ../sass/phone.scss */
+/* line 429, ../sass/phone.scss */
 #attenders .background-coloums {
   display: none;
 }
-/* line 428, ../sass/phone.scss */
+/* line 432, ../sass/phone.scss */
 #attenders #guests {
   background-color: #ff572b;
 }
-/* line 431, ../sass/phone.scss */
+/* line 435, ../sass/phone.scss */
 #attenders #pilots {
   background-color: #ffb01a;
 }
-/* line 434, ../sass/phone.scss */
+/* line 438, ../sass/phone.scss */
 #attenders #drivers {
   background-color: #2b2b57;
 }
 
-/* line 439, ../sass/phone.scss */
+/* line 443, ../sass/phone.scss */
 #registration {
   background-position: center;
   background-repeat: no-repeat;
@@ -808,215 +801,215 @@ body {
   background-image: url("/assets/img/registration-1.jpg");
   color: #fff;
 }
-/* line 445, ../sass/phone.scss */
+/* line 449, ../sass/phone.scss */
 #registration .title {
   font-size: 2.3em;
   padding: 2em 0 1em 0;
   width: 100%;
   text-align: center;
 }
-/* line 452, ../sass/phone.scss */
+/* line 456, ../sass/phone.scss */
 #registration h2 {
   margin-bottom: 0.5em;
 }
-/* line 456, ../sass/phone.scss */
+/* line 460, ../sass/phone.scss */
 #registration .half {
   font-weight: lighter;
   text-align: center;
 }
 @media screen and (orientation: portrait) {
-  /* line 456, ../sass/phone.scss */
+  /* line 460, ../sass/phone.scss */
   #registration .half {
     margin: 0 1em 0 1em;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 456, ../sass/phone.scss */
+  /* line 460, ../sass/phone.scss */
   #registration .half {
     max-width: 40em;
     margin: auto;
   }
 }
-/* line 466, ../sass/phone.scss */
+/* line 470, ../sass/phone.scss */
 #registration .half p {
   text-align: left;
   margin: 1.5em 0 1em 0;
 }
-/* line 472, ../sass/phone.scss */
+/* line 476, ../sass/phone.scss */
 #registration #docs {
   font-weight: lighter;
   margin: 0 2em 0 2em;
   text-align: center;
 }
-/* line 476, ../sass/phone.scss */
+/* line 480, ../sass/phone.scss */
 #registration #docs > div {
   padding: 1em 0;
   display: inline-block;
   width: 50%;
   text-align: center;
 }
-/* line 482, ../sass/phone.scss */
+/* line 486, ../sass/phone.scss */
 #registration #docs div:last-child {
   width: 100%;
   padding-bottom: 3em;
 }
 
-/* line 489, ../sass/phone.scss */
+/* line 493, ../sass/phone.scss */
 #map {
   width: 100%;
   background-color: #ffb01a;
 }
-/* line 492, ../sass/phone.scss */
+/* line 496, ../sass/phone.scss */
 #map #map-container, #map #map-loading {
   display: none;
 }
-/* line 496, ../sass/phone.scss */
+/* line 500, ../sass/phone.scss */
 #map #map-hyper-location .title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 503, ../sass/phone.scss */
+/* line 507, ../sass/phone.scss */
 #map #map-hyper-location .guests {
   background-color: #ff572b;
 }
-/* line 506, ../sass/phone.scss */
+/* line 510, ../sass/phone.scss */
 #map #map-hyper-location .pilots {
   background-color: #ffb01a;
 }
-/* line 509, ../sass/phone.scss */
+/* line 513, ../sass/phone.scss */
 #map #map-hyper-location .drivers {
   background-color: #2b2b57;
 }
 @media screen and (orientation: portrait) {
-  /* line 512, ../sass/phone.scss */
+  /* line 516, ../sass/phone.scss */
   #map #map-hyper-location ul {
     padding: 3em;
   }
 }
 @media screen and (orientation: landscape) {
-  /* line 512, ../sass/phone.scss */
+  /* line 516, ../sass/phone.scss */
   #map #map-hyper-location ul {
     max-width: 40em;
     margin: auto;
   }
 }
-/* line 521, ../sass/phone.scss */
+/* line 525, ../sass/phone.scss */
 #map #map-hyper-location li {
   width: 90%;
 }
-/* line 523, ../sass/phone.scss */
+/* line 527, ../sass/phone.scss */
 #map #map-hyper-location li a {
   padding: 5%;
   display: inline-block;
 }
 
-/* line 571, ../sass/phone.scss */
+/* line 575, ../sass/phone.scss */
 #contact {
   background: #ff572b;
   background-color: #ff572b;
   color: #ff572b;
   padding: 3em 0;
 }
-/* line 576, ../sass/phone.scss */
+/* line 580, ../sass/phone.scss */
 #contact p {
   margin-left: 2em;
 }
-/* line 579, ../sass/phone.scss */
+/* line 583, ../sass/phone.scss */
 #contact span, #contact a {
   color: #fff;
   font-size: 1em;
   display: block;
 }
-/* line 584, ../sass/phone.scss */
+/* line 588, ../sass/phone.scss */
 #contact span:first-child {
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 590, ../sass/phone.scss */
+/* line 594, ../sass/phone.scss */
 #contact #social-icons a {
   display: inline-block;
-  padding: 1em;
+  padding: 2.5em 2em 0 0;
 }
-/* line 592, ../sass/phone.scss */
+/* line 596, ../sass/phone.scss */
 #contact #social-icons a img {
   width: 100%;
   max-width: 50px;
 }
 
-/* line 601, ../sass/phone.scss */
+/* line 605, ../sass/phone.scss */
 #sponsors {
   background-color: #2b2b57;
   color: #fff;
   text-align: center;
 }
-/* line 605, ../sass/phone.scss */
+/* line 609, ../sass/phone.scss */
 #sponsors svg {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
 }
-/* line 611, ../sass/phone.scss */
+/* line 615, ../sass/phone.scss */
 #sponsors #title {
   font-size: 2.3em;
   padding-top: 2em;
   width: 100%;
   text-align: center;
 }
-/* line 618, ../sass/phone.scss */
+/* line 622, ../sass/phone.scss */
 #sponsors h3 {
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 624, ../sass/phone.scss */
+/* line 628, ../sass/phone.scss */
 #sponsors .sponsor {
   padding-top: 3em;
 }
-/* line 626, ../sass/phone.scss */
+/* line 630, ../sass/phone.scss */
 #sponsors .sponsor img {
   vertical-align: middle;
 }
-/* line 630, ../sass/phone.scss */
+/* line 634, ../sass/phone.scss */
 #sponsors img {
   height: auto;
 }
-/* line 633, ../sass/phone.scss */
+/* line 637, ../sass/phone.scss */
 #sponsors .sponsor:last-child {
   padding-bottom: 3em;
 }
-/* line 636, ../sass/phone.scss */
+/* line 640, ../sass/phone.scss */
 #sponsors > div:nth-child(3) img {
   width: 75%;
   max-width: 200px;
   padding: 5%;
 }
-/* line 641, ../sass/phone.scss */
+/* line 645, ../sass/phone.scss */
 #sponsors > div:nth-child(4) img {
   width: 40%;
   max-width: 200px;
   padding: 5%;
 }
-/* line 646, ../sass/phone.scss */
+/* line 650, ../sass/phone.scss */
 #sponsors > div:nth-child(5) img {
   width: 30%;
   max-width: 200px;
   padding: 1.5%;
 }
-/* line 651, ../sass/phone.scss */
+/* line 655, ../sass/phone.scss */
 #sponsors > div:nth-child(6) img {
   width: 23%;
   max-width: 200px;
   padding: 1%;
 }
 
-/* line 660, ../sass/phone.scss */
+/* line 664, ../sass/phone.scss */
 .donate-button {
   display: none;
 }
 
-/* line 664, ../sass/phone.scss */
+/* line 668, ../sass/phone.scss */
 .back-white {
   background: #ff572b;
   background-color: #ff572b;

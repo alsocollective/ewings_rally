@@ -233,3 +233,14 @@ body #djDebug {
 #sponsors #bronze {
   color: #d8741a;
 }
+
+/* line 178, ../sass/base.scss */
+.donate-button {
+  color: #fff;
+  text-decoration: none;
+  border: 3px solid #fff;
+  position: absolute;
+  right: -60px;
+  top: 0px;
+  padding: 0.2em 0.3em 0.2em 0.3em;
+}

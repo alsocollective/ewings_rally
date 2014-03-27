@@ -178,37 +178,40 @@ body{
 			height: 100%;
 			width: 100%;
 			text-align: center;
-			@include p-l(p) {
-				> img{
-					margin-top: 85px;
-					width: 50%;
-					padding-bottom: 2em;
+			vertical-align: top;
+			// @include p-l(p) {
+			// 	> img{
+			// 		margin-top: 85px;
+			// 		width: 50%;
+			// 		padding-bottom: 2em;
+			// 	}
+			// 	#rally-logo{
+			// 		position: absolute;
+			// 		left: 0;
+			// 		bottom: 100px;
+			// 		svg,img{
+			// 			max-width: 50%;
+			// 		}
+			// 	}
+			// }
+
+			// @include p-l(l) {
+				vertical-align: middle;
+				#ewings-logo {
+					width: 30%;
+					position: absolute;
+					bottom: 5em;
+					left: 3.5em;
 				}
 				#rally-logo{
 					position: absolute;
-					left: 0;
-					bottom: 100px;
-					svg,img{
-						max-width: 50%;
-					}
-				}
-			}
-
-			@include p-l(l) {
-				vertical-align: middle;
-				> img{
-					width: 40%;
-					margin-top: 100px;
-					vertical-align: top;
-				}
-				#rally-logo{
 					display: inline-block;
-					width: 50%;
-					height: 100%;
-					margin-top: -50px;
-
+					height: auto;
+					bottom: 4em;
+					right: 3em;
+					width: 30%;
 				}
-			}
+			// }
 		}
 		#quote-container{
 			position: fixed;
@@ -376,6 +379,7 @@ body{
 			margin: 0 auto;
 			display: block;
 			fill: #fff;
+			max-width: 200px;
 		}
 		#text{
 
@@ -593,7 +597,7 @@ body{
 				width: 100%;
 				max-width: 50px;
 			}
-			padding: 1em;
+			padding: 2.5em 2em 0 0;
 		}
 	}
 }
