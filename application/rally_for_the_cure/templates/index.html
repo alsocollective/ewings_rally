@@ -1,7 +1,7 @@
 {% load staticfiles %}
 
 <!DOCTYPE html >
-<html type="text/html">
+<html>
 <head>
 	<title>Rally for the Cure</title>
 	<meta charset="utf-8"/>
@@ -27,7 +27,10 @@
 <body class="yellow-nav">
 
 
-<div id="loading-screen" style="background-image: url('{{ MEDIA_URL }}{{slides.0.background_image}}')"></div>
+<div id="loading-screen" style="background-image: url('{{ MEDIA_URL }}{{slides.0.background_image}}')">
+	<div>
+		Loading<br><img src="{% static "assets/logos/ewings-logo.png"%}" id="ewings-logo"></div>
+</div>
 <div id="nav-button">
 	<div id="nav-button-container">
 		<div class="line"></div>
@@ -47,12 +50,10 @@
 				<li><a href="drivers" class="nav-clicker">Drivers</a></li>
 				<li><a href="guests" class="nav-clicker">Guests</a></li>
 				<li><a href="registration" class="nav-clicker">Registration</a></li>
+				<li><a href="map" class="nav-clicker">Map</a></li>
 				<li><a href="http://ewingscancer.ca/donate/" target="Ewings Donate">Donate</a></li><li><a href="sponsors" class="nav-clicker">Sponsors</a></li>
-				{% if desktop%}{% else %}<li id="social-icons"><a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a>
-		<a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a>
-		<a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a></li>{% endif %}
 			</ul>
-				{% if desktop%}<div id="background-colour"></div>{% else %}<div class="last-button" style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>{% endif %}
+				{% if desktop%}<div id="background-colour"></div>{% else %}<div class="last-button" style="background-image: url('{% static "assets/icons/down-arrow.png"%}')"></div>{% endif %}
 		</div>
 	{% if desktop%}
 	</nav><!-- remove for phone -->
@@ -67,12 +68,16 @@
 	</div>
 </div>
 
+
+
 	<div id="carousel" class="section">
 		<div id="carousel-nav">
 			{% for slide in slides %}
 				<div class="slide-nav {% if forloop.first %}active{% endif %}" id="{{forloop.counter}}"></div>
 			{% endfor %}
-
+			<script type="text/javascript">
+				var imagesToPreLoad = [{% for slide in slides %}"{{ MEDIA_URL }}{{slide.background_image}}"{% if not forloop.last%},{% endif %}{% endfor %}]
+			</script>
 		</div>
 		{% for slide in slides %}
 		<div class="slide {% if forloop.first %}heighlight{% else %} off{% endif %}">
@@ -128,8 +133,10 @@
 	<div id="container">
 		<div id="spacer" class="section"></div>
 		<div id="about" class="section">
-			<div id="dimond">
-				<div style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>
+			<div id="dimond-container">
+				<div id="dimond">
+					<div style="background-image: url('{% static "assets/icons/down-arrow-black.png"%}')"></div>
+				</div>
 			</div>
 			<div id="background-image-container">
 				<div id="background-1" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_1}}')"></div>
@@ -137,7 +144,7 @@
 					<div  data-top-bottom="transform: translateX(0%) skewX(45deg)" data-500-bottom="transform: translateX(-100%) skewX(45deg)" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_2}}')"></div>
 				</div>
 			</div>
-			<div class="title">INSPIRATION</div>
+			<div class="title">About Us</div>
 			<div id="left" >
 				<div id="imageBox" style="background-image: url('{{ MEDIA_URL }}{{data.background_image_portrait}}')"></div>
 			</div><div id="right">
@@ -219,7 +226,7 @@
 				<p>{{data.online_payment_text}}</p>
 
 			</div><div id="cheque" class="half">
-				<h2><a href="{{data.online_payment_link}}" target="Payment">Cheque</a></h2>
+				<h2>Cheque</h2>
 				<p>{{data.cheque_payment_text}}</p>
 			</div>
 			<div id="docs">
@@ -298,6 +305,7 @@
 					<p>
 						<span>Contact Us</span> | <span>The Ewings Cancer Foundation of Canada</span> | <a href="mailto:{{data.conact_email}}" target="Mail To">{{data.conact_email}}</a> | <a href="tel:{{data.conact_phone}}">Tel: {{data.conact_phone}}</a>
 					</p>
+					{% if desktop%}{% else %}<p id="social-icons"><a href="http://instagram.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-insta.png"></a><a href="https://twitter.com/ewingscancer"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-tweet.png"></a><a href="https://www.facebook.com/EwingsCancerFoundationOfCanada"><img src="http://also-static.com/rallyforthecure/static/assets/icons/ew-face.png"></a></p>{% endif %}
 				</div>
 			</div>
 

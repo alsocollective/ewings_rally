@@ -129,15 +129,7 @@ a{
 // }
 
 
-.donate-button{
-	color: #fff;
-	text-decoration: none;
-	border: 3px solid #fff;
-	position: absolute;
-	right: -60px;
-	top: 0px;
-	padding: 0.2em 0.3em 0.2em 0.3em;
-}
+
 
 
 
@@ -165,4 +157,20 @@ body #djDebug{
 	top: 0;
 	z-index: 9999999999;
 	width: 100%;
+}
+
+
+#sponsors{
+	#platinum{
+		color: #ddd;
+	}
+	#gold{
+		color: #ffd95f;
+	}
+	#silver{
+		color: #777;
+	}
+	#bronze{
+		color: #d8741a;
+	}
 }

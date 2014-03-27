@@ -210,7 +210,7 @@
 		.image-background{
 			width: 100%;
 			height: 100%;
-			background-position: center;
+			background-position: top;
 			background-repeat: no-repeat;
 			@include vendorize(background-size, cover);
 		}
@@ -327,7 +327,7 @@
 			margin-top: 300px;
 			display: inline-block;
 			margin-right: 5em;
-			background-position: center;
+			background-position: top;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
 			// background-image: url("/assets/img/about-prt.jpg");
@@ -410,16 +410,23 @@
 		}
 	}
 
-	#dimond{
+	#dimond-container{
 		position: absolute;
 		top: -50px;
-		left: calc(50% - 50px);
+		width: 100%;
+		height: 100px;
+		text-align: center;
+		z-index: 99;
+	}
+	#dimond{
+		display: inline-block;
 		width: 100px;
 		height: 100px;
 		background: $yellow;
 		background-color: $yellow;
 		@include rotate(45deg);
 		@include origin(50% 50%);
+		text-align: left;
 		> div{
 			width: 70%;
 			height: 70%;
@@ -713,19 +720,6 @@
 		display: none;
 		margin: 0 auto;
 	}
-	
-	#platinum{
-		color: #ddd;
-	}
-	#gold{
-		color: #ffd95f;
-	}
-	#silver{
-		color: #777;
-	}
-	#bronze{
-		color: #d8741a;
-	}
 
 	h3{
 		@extend .body-type; //for the type size
@@ -842,12 +836,41 @@
 #loading-screen{
 	z-index: 9999999;
 	position: fixed;
+	display: table;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-position: center;
+	background-position: top;
 	background-repeat: no-repeat;
 	@include vendorize(background-size, cover);
+	>div{
+		display: table-cell;
+		font-size: 1.7em;
+		text-align: left;
+		line-height: 1.2em;
+		color: #fff;
+		font-weight: bolder;
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
+		@include vendorize(text-shadow, 0px 0px 10px #000);
+		img{
+			width: 50%;
+			height: auto;
+		}
+	}
 	// background-image: url("/assets/img/landing-2.jpg");
+}
+
+
+.donate-button{
+	color: #fff;
+	text-decoration: none;
+	border: 3px solid #fff;
+	position: absolute;
+	right: -60px;
+	top: 0px;
+	padding: 0.2em 0.3em 0.2em 0.3em;
 }

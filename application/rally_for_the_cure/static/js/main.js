@@ -1,4 +1,3 @@
-setMarginTop();
 if(deskTop){
 	skrollr.init({
 		forceHeight: false
@@ -15,6 +14,9 @@ var carousel_sliding=false,
 	sldNum = 1;
 
 checkPhoneHeight();
+
+$(window).resize(setMarginTop);
+setMarginTop();
 
 $(document).ready(function() {
 	carousel_conatiner = $("#carousel");
@@ -70,10 +72,11 @@ $(document).ready(function() {
 
 $(window).load(function(){
 	if(phone){
-		console.log("yep "+ $("#nav-container").outerHeight())
 		slideMenu.manualResize();
 		slideMenu.refindHeight();
+		$("#scroller-container").scroll(detectIfBellowGuests);
 	}
+	preLoadImages();
 	setTimeout(function(){
 		$("#loading-screen").fadeOut('slow');
 		scrolling = false;
@@ -82,6 +85,21 @@ $(window).load(function(){
 		},1000)
 	},1000);
 });
+
+function detectIfBellowGuests(event){
+	if($("#attenders").offset().top<0){
+		$(this).addClass('back-white');
+	} else {
+		$(this).removeClass('back-white');
+	}
+}
+
+function preLoadImages(){
+	for(var a =0, max = imagesToPreLoad.length; a < max; ++a){
+		var image = new Image()
+		image.src = imagesToPreLoad[a];
+	}
+}
 
 function setURLOnScroll(event){
 	if(this.id == "carousel" || this.id == "spacer"){
@@ -94,11 +112,7 @@ function setURLOnScroll(event){
 function menu_nav_click(event){
 	event.preventDefault();
 	console.log("nav click");
-	console.log(menu_nav_click)
 	if(slideMenu && slideMenu.clickable()){
-		console.log("mobile prevent because...");
-		console.log(slideMenu)
-		console.log(slideMenu.clickable())
 		event.preventDefault
 		return false;
 	}
@@ -535,7 +549,8 @@ function nav_blue_yellow(dir){
 }
 
 function setMarginTop(){
-	$("#spacer").css({"margin-top":$(window).height()});
+	$("#spacer").css({"margin-top":$(window).outerHeight()});
+	$("body, html, #carousel").height($(window).outerHeight());
 }
 
 function stopScrollIfScrolling(event){
@@ -547,23 +562,15 @@ function stopScrollIfScrolling(event){
 }
 
 function animateScroll(element){
-	console.log("element passed into animate scroll was...")
-	console.log($(element).offset().top);
 	if(scrolling){
 		console.log("is scrolling");
 		return false;
 	}
 	if(element){
 		scrolling = true;
-		if(!deskTop){
-			$('html, body, #scroller-container').animate({scrollTop :  $(element).offset().top},500,function(){
-				scrolling = false;
-			});
-		} else {
-			$('html, body').animate({scrollTop :  $(element).offset().top},500,function(){
-				scrolling = false;
-			});
-		}
+		$('html, body, #scroller-container').animate({scrollTop :  $(element).offset().top+$("#scroller-container").scrollTop()},500,function(){
+			scrolling = false;
+		});
 	} else {
 		console.log("ERROR: No element passed into animateScroll");
 	}

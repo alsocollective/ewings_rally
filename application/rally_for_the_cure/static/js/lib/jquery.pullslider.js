@@ -91,10 +91,12 @@ $.fn.pullSlider = function( options ) {
 			console.log("touchStart ");
 		}
 		if(settings.inmode){
+			event.preventDefault();
 			settings.toggelbutton.addClass('selected');
 			settings.selected = true;
 			settings.last = settings.element.offset().top;
 			settings.height = settings.element.height();
+			return false;
 		}
 	})
 	//as the user moves over the screen the element follows their touch, by preventing default we do not allow click to be triggered, we also do the math for the acceleration of the menu
@@ -112,9 +114,14 @@ $.fn.pullSlider = function( options ) {
 			var tLoc = 0;
 			tLoc = touched["clientY"]-settings.height+(settings.tbheight);
 
-			if(touched["clientY"]-settings.height < 0 && touched["clientY"]-settings.height > -settings.height){
+			if(touched["clientY"]-settings.height+(settings.tbheight) < 0 && touched["clientY"]-settings.height > -settings.height){
 				settings.element.css("top",tLoc);
 			}
+			return false;
+		}
+		if(settings.display){
+			event.preventDefault();
+			return false;
 		}
 	});
 	}
@@ -124,6 +131,7 @@ $.fn.pullSlider = function( options ) {
 			console.log("touchEnd");
 		}
 		if(settings.selected){
+			event.preventDefault();
 			toggleAnimation(true);
 
 			if(settings.accel <= 0){
@@ -138,6 +146,7 @@ $.fn.pullSlider = function( options ) {
 			putToPosistion();
 			settings.toggelbutton.removeClass('selected');
 			settings.selected = false;
+			return false;
 		}
 		// scrollToBottom();
 	})
@@ -181,10 +190,6 @@ $.fn.pullSlider = function( options ) {
 				settings.element.css("top","0");
 			} else {
 				if(noscroll == undefined || !noscroll){toggleAnimation(true)};
-				console.log("+=+=+=+=+=+=+=+=+=+=+=+=+");
-				console.log(settings.height)
-				console.log(settings.tbheight)
-				console.log(-settings.height+settings.tbheight)
 				if(settings.windowHeight <= settings.height){
 					settings.element.css("top",-settings.height+settings.tbheight);
 				} else {
