@@ -982,25 +982,25 @@ body {
 /* line 640, ../sass/phone.scss */
 #sponsors > div:nth-child(3) img {
   width: 75%;
-  max-width: 200px;
+  max-width: 100px;
   padding: 5%;
 }
 /* line 645, ../sass/phone.scss */
 #sponsors > div:nth-child(4) img {
   width: 40%;
-  max-width: 200px;
+  max-width: 100px;
   padding: 5%;
 }
 /* line 650, ../sass/phone.scss */
 #sponsors > div:nth-child(5) img {
   width: 30%;
-  max-width: 200px;
+  max-width: 100px;
   padding: 1.5%;
 }
 /* line 655, ../sass/phone.scss */
 #sponsors > div:nth-child(6) img {
   width: 23%;
-  max-width: 200px;
+  max-width: 100px;
   padding: 1%;
 }
 
