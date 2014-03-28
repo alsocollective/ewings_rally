@@ -628,6 +628,14 @@
 			text-decoration: underline;
 		}
 	}
+	#paypal{
+		h2:hover{
+			border-color: $yellow;
+			background-color: $yellow;
+			background: $yellow;
+			color: #000;
+		}
+	}
 	> div{
 		margin-top: 6em;
 	}
