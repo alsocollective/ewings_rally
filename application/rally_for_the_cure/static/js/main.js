@@ -1,4 +1,4 @@
-if(deskTop){
+if(deskTop && skrollr){
 	skrollr.init({
 		forceHeight: false
 	});
@@ -30,7 +30,6 @@ $(document).ready(function() {
 
 	// Desktop Only!
 	if(deskTop){
-		console.log("set up desktop");
 		$("#dimond").click(function(){
 			scrollFromCarocel("down");
 		});
@@ -111,7 +110,6 @@ function setURLOnScroll(event){
 
 function menu_nav_click(event){
 	event.preventDefault();
-	console.log("nav click");
 	if(slideMenu && slideMenu.clickable()){
 		event.preventDefault
 		return false;
@@ -395,7 +393,6 @@ function makeLegend(locations){
 				closeAllTabs();
 				map.panTo(data[2]);
 				data[0].open(map,data[1]);
-				console.log(data[0])
 				if(data[3] == "pilots"){
 					map.setZoom(12);
 				} else if(data[3] == "drivers"){
@@ -513,7 +510,6 @@ function scrollFromCarocel(direction){
 	if(scrolling){
 		return false;
 	}
-	console.log($(window).scrollTop());
 	if(direction == "down" && $(window).scrollTop() < 500){
 		scrolling = true;
 		$('html, body').animate({
@@ -556,14 +552,12 @@ function setMarginTop(){
 function stopScrollIfScrolling(event){
 	if(scrolling){
 		event.preventDefault();
-		console.log("stoppppiinngng");
 		return false;
 	}
 }
 
 function animateScroll(element){
 	if(scrolling){
-		console.log("is scrolling");
 		return false;
 	}
 	if(element){
