@@ -11,6 +11,10 @@ body{
 #nav-button{
 	display: none;
 }
+.max_width{
+	max-width: 40em;
+	margin: auto;
+}
 
 /*
  __  _  __   _   _
@@ -26,8 +30,11 @@ body{
 
 		@include p-l(p) {
 			li a{
-				padding: 5%;
+				padding: 3% 5%;
 				width: 90%;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 0.9em;
 			}
 		}
 
@@ -35,6 +42,9 @@ body{
 			li{
 				display: inline-block;
 				a{
+					text-transform: uppercase;
+					font-weight: bold;
+					font-size: 0.9em;
 					padding: 0.75em 1em;
 				}
 			}
@@ -42,6 +52,9 @@ body{
 		a{
 			width: 100%;
 			display: inline-block;
+		}
+		img{
+			max-height: 25px;
 		}
  	}
 	.last-button{
@@ -81,6 +94,9 @@ body{
 		@include origin(50% 50%);
 	}
 
+	#social-media-buttons{
+		display: none;
+	}
 
 /*
   ___ __  ___  __  _  _   __  ___ _
@@ -131,7 +147,7 @@ body{
 		}
 		.heighlight{
 			z-index: 1 !important;
-			opacity: 1;
+			opacity: 1; filter:alpha(opacity=1);
 		}
 		.text .slide-text{
 			opacity: 1 !important;
@@ -162,36 +178,40 @@ body{
 			height: 100%;
 			width: 100%;
 			text-align: center;
-			@include p-l(p) {
-				> img{
-					margin-top: 85px;
-					width: 50%;
+			vertical-align: top;
+			// @include p-l(p) {
+			// 	> img{
+			// 		margin-top: 85px;
+			// 		width: 50%;
+			// 		padding-bottom: 2em;
+			// 	}
+			// 	#rally-logo{
+			// 		position: absolute;
+			// 		left: 0;
+			// 		bottom: 100px;
+			// 		svg,img{
+			// 			max-width: 50%;
+			// 		}
+			// 	}
+			// }
+
+			// @include p-l(l) {
+				vertical-align: middle;
+				#ewings-logo {
+					width: 30%;
+					position: absolute;
+					bottom: 5em;
+					left: 3.5em;
 				}
 				#rally-logo{
 					position: absolute;
-					left: 0;
-					bottom: 100px;
-					svg,img{
-						max-width: 50%;
-					}
-				}
-			}
-
-			@include p-l(l) {
-				vertical-align: middle;
-				> img{
-					width: 40%;
-					margin-top: 100px;
-					vertical-align: top;
-				}
-				#rally-logo{
 					display: inline-block;
-					width: 50%;
-					height: 100%;
-					margin-top: -50px;
-
+					height: auto;
+					bottom: 4em;
+					right: 3em;
+					width: 30%;
 				}
-			}
+			// }
 		}
 		#quote-container{
 			position: fixed;
@@ -200,8 +220,14 @@ body{
 			bottom: 75px;
 			text-align: center;
 			.quote{
-				margin: 0 1em 0 1em;
-				font-size: 1.5em;
+				@include p-l(p) {
+					margin: 0 1em 0 1em;
+				}
+				@include p-l(l) {
+					max-width: 40em;
+					margin: auto;
+				}
+				font-size: 1.2em;
 				text-align: left;
 				line-height: 1.2em;
 				color: #fff;
@@ -292,6 +318,7 @@ body{
 		@include vendorize(border-radius,50%);
 	}
 	#right{
+		@extend .max_width;
 		p:nth-child(1){
 			@extend .secondary-titles;
 			margin: 0 8px 0 8px;
@@ -306,23 +333,30 @@ body{
 			padding-bottom: 200px;
 		}
 	}
-	#dimond{
+
+	#dimond-container{
 		position: absolute;
-		z-index: 9;
-		top: -40px;
-		left: calc(50% - 40px);
-		width: 80px;
-		height: 80px;
+		top: -50px;
+		width: 100%;
+		height: 100px;
+		text-align: center;
+		z-index: 99;
+	}
+	#dimond{
+		display: inline-block;
+		width: 100px;
+		height: 100px;
 		background: $yellow;
 		background-color: $yellow;
 		@include rotate(45deg);
 		@include origin(50% 50%);
+		text-align: left;
 		> div{
 			width: 70%;
 			height: 70%;
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url("/assets/icons/down-arrow-black.png");
+			// background-image: url("/assets/icons/down-arrow-black.png");
 			background-size: 40px;
 			@include rotate(-45deg);
 			@include origin(50% 50%);
@@ -345,11 +379,19 @@ body{
 			margin: 0 auto;
 			display: block;
 			fill: #fff;
+			max-width: 200px;
 		}
 		#text{
+
 			font-weight: lighter;
-			margin: 0 1em 0 1em;
 			text-align: left;
+			@include p-l(p) {
+				margin: 0 1em 0 1em;
+			}
+			@include p-l(l) {
+				max-width: 40em;
+				margin: auto;
+			}
 		}
 
 		h3{
@@ -382,6 +424,10 @@ body{
 			}
 
 		}
+		a{
+			font-weight: bold;
+			text-decoration: underline;
+		}
 		// background-image: url("/assets/img/half.svg");
 	}
 	.background-coloums{
@@ -395,6 +441,16 @@ body{
 	}
 	#drivers{
 		background-color: $blue;
+	}
+}
+#guests{
+	a:hover{
+		color: $blue;
+	}
+}
+#drivers{
+	a:hover{
+		color: $yellow;
 	}
 }
 
@@ -417,7 +473,13 @@ body{
 	}
 	.half{
 		font-weight: lighter;
-		margin: 0 1em 0 1em;
+		@include p-l(p) {
+			margin: 0 1em 0 1em;
+		}
+		@include p-l(l) {
+			max-width: 40em;
+			margin: auto;
+		}
 		text-align: center;
 		p{
 			text-align: left;
@@ -456,11 +518,30 @@ body{
 			width: 100%;
 			text-align: center;
 		}
-		dl{
-			padding: 3em 1em 0 1em;
+		.guests{
+			background-color: $orange;
 		}
-		dd{
-			padding: 0.1em 0 1em 0.5em;
+		.pilots{
+			background-color: $yellow;
+		}
+		.drivers{
+			background-color: $blue;
+		}
+		ul{
+			@include p-l(p) {
+				padding: 3em;
+			}
+			@include p-l(l) {
+				max-width: 40em;
+				margin: auto;
+			}
+		}
+		li{
+			width: 90%;
+			a{
+				padding: 5%;
+				display: inline-block;
+			}
 		}
 	}
 	// #map-container{
@@ -479,7 +560,7 @@ body{
 	// 	@include vendorize(background-size,cover);
 	// 	background-image: url("/assets/img/map-loading.jpg");
 	// 	> div{
-	// 		opacity: 1;
+	// 		opacity: 1; filter:alpha(opacity=1);
 	// 		color: #fff;
 	// 		@include bold();
 	// 		font-size: 3em;
@@ -492,7 +573,7 @@ body{
 	// 	}
 	// }
 	// #map-loading .clicked{
-	// 	opacity: 1;
+	// 	opacity: 1; filter:alpha(opacity=1);
 	// }
 	// .off{
 	// 	display: none !important;
@@ -523,6 +604,16 @@ body{
 		text-transform: uppercase;
 		font-weight: bolder;
 	}
+	#social-icons{
+		a{
+			display: inline-block;
+			img{
+				width: 100%;
+				max-width: 50px;
+			}
+			padding: 2.5em 2em 0 0;
+		}
+	}
 }
 
 #sponsors{
@@ -552,29 +643,43 @@ body{
 		padding-top: 3em;
 		img{
 			vertical-align: middle;
-			max-height: 100px;
 		}
+	}
+	img{
+		height: auto;
 	}
 	.sponsor:last-child{
 		padding-bottom: 3em;
 	}
 	> div:nth-child(3) img{
-			max-width: 75%;
+			width: 75%;
+			max-width: 100px;
 			padding: 5%;
 	}
 	> div:nth-child(4) img{
-			max-width: 40%;
+			width: 40%;
+			max-width: 100px;
 			padding: 5%;
 	}
 	> div:nth-child(5) img{
-			max-width: 30%;
+			width: 30%;
+			max-width: 100px;
 			padding: 1.5%;
 	}
 	> div:nth-child(6) img{
-			max-width: 23%;
+			width: 23%;
+			max-width: 100px;
 			padding: 1%;
 	}
 }
 
 
 
+.donate-button{
+	display: none;
+}
+
+.back-white{
+	background:$orange;
+	background-color:$orange;
+}

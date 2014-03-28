@@ -1,10 +1,4 @@
-var deskTop = true,
-	tablet = false,
-	phone = false;
-
-setMarginTop();
-
-if(deskTop){
+if(deskTop && skrollr){
 	skrollr.init({
 		forceHeight: false
 	});
@@ -13,13 +7,17 @@ if(deskTop){
 var carousel_sliding=false,
 	carousel_conatiner=false,
 	windowHeight=$(window).outerHeight(),
-	scrolling = false,
+	scrolling = true,
 	showing_nav=false,
 	slideMenu = false,
 	winWidth = 0,
-	sldNum = 1;
+	sldNum = 1,
+	slideCountDown = false;
 
 checkPhoneHeight();
+
+$(window).resize(setMarginTop);
+setMarginTop();
 
 $(document).ready(function() {
 	carousel_conatiner = $("#carousel");
@@ -33,7 +31,6 @@ $(document).ready(function() {
 
 	// Desktop Only!
 	if(deskTop){
-		console.log("set up desktop");
 		$("#dimond").click(function(){
 			scrollFromCarocel("down");
 		});
@@ -75,17 +72,34 @@ $(document).ready(function() {
 
 $(window).load(function(){
 	if(phone){
-		console.log("yep "+ $("#nav-container").outerHeight())
 		slideMenu.manualResize();
 		slideMenu.refindHeight();
+		$("#scroller-container").scroll(detectIfBellowGuests);
 	}
+	preLoadImages();
 	setTimeout(function(){
 		$("#loading-screen").fadeOut('slow');
+		scrolling = false;
 		setTimeout(function(){
 			$(".heighlight").addClass('text');
 		},1000)
 	},1000);
 });
+
+function detectIfBellowGuests(event){
+	if($("#attenders").offset().top<0){
+		$(this).addClass('back-white');
+	} else {
+		$(this).removeClass('back-white');
+	}
+}
+
+function preLoadImages(){
+	for(var a =0, max = imagesToPreLoad.length; a < max; ++a){
+		var image = new Image()
+		image.src = imagesToPreLoad[a];
+	}
+}
 
 function setURLOnScroll(event){
 	if(this.id == "carousel" || this.id == "spacer"){
@@ -97,7 +111,6 @@ function setURLOnScroll(event){
 
 function menu_nav_click(event){
 	event.preventDefault();
-
 	if(slideMenu && slideMenu.clickable()){
 		event.preventDefault
 		return false;
@@ -106,13 +119,16 @@ function menu_nav_click(event){
 		slideMenu.refindHeight();
 	}
 	var link = this.href.split("/");
-	if(link[link.length-1] == "contact"){
-		//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
-	} else {
-		setURL(link);
+	// if(link[link.length-1] == "contact"){
+	// 	//$("#contact").toggleClass('scroll-in').toggleClass('scroll-out');
+	// } else {
+		// setURL(link);
 		animateScroll("#"+link[link.length-1]);
-	}
-	toggleOut(event);
+	// }
+
+	$("#nav").removeClass('slideout');
+	setTimeout(toggleTall,1000);
+
 	return false;
 }
 function hideNavMenue(){
@@ -158,17 +174,35 @@ function navSlideClick(e){
 	$(this).addClass('active');
 	var ElNum = this.id;
 	changeSlide($($("#carousel .heighlight")[0]),$($("#carousel").children()[parseInt(ElNum)]))
+	resetCarouselAuto();
 }
 
 // Temporary Timed Carousel
+// var timeintoProgram = 0;
 function carouselAuto(){
-	setTimeout(
-		function(){
-			$("#carousel .heighlight").click();
-			carouselAuto();
-		},
-		10000
-	);
+	// setInterval(function(){
+	// 	++timeintoProgram;
+	// 	console.log(timeintoProgram);
+	// },1000);
+	var time = 6000;
+	if(checkIfLong()){
+		time = 30000;
+	}
+	slideCountDown = setTimeout(clickHeighlightCarosel,time);
+}
+function resetCarouselAuto(){
+	var time = 6000;
+	if(checkIfLong()){
+		time = 30000;
+	}
+	clearTimeout(slideCountDown);
+	slideCountDown = setTimeout(clickHeighlightCarosel,time);
+}
+function clickHeighlightCarosel(){
+	$("#carousel .heighlight").click();
+}
+function checkIfLong(){
+	return !$("#carousel .heighlight img").length
 }
 
 // control function
@@ -177,6 +211,7 @@ function newSlide(e){
 	nextSlide = getNextSlide(curSlide);
 	nextCaroselNav();
 	changeSlide(curSlide,nextSlide);
+	resetCarouselAuto();
 }
 
 function nextCaroselNav(){
@@ -342,18 +377,11 @@ function gmaploaded() {
 
 
 		map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
+		var locations = [];
+		for(var a = 0, max = map_location.length; a < max; ++a){
+			locations.push(makeIcon(map_location[a][0],map_location[a][1],map_location[a][2],map_location[a][3]));
+		}
 
-		var locations = [
-			makeIcon("Buttonville Hanger<br>",[43.8613492,-79.3667179],"Meeting at Buttonville<br>Airport Hanger 17A","guests"),
-			makeIcon("Airport Parking<br>",[43.8638698,-79.3661961],"180 Renfrew<br>Drive","guests"),
-			makeIcon("Buttonville Airport<br>",[43.8610426,-79.368975],"<br>CYKZ","pilots"),
-			makeIcon("Peterborough Airport<br>",[54.9880443,-85.4437069],"<br>CYPO !might be wrong","pilots"),
-			makeIcon("Edenvale Airport<br>",[44.4439291,-79.9636755],"<br>CNV8","pilots"),
-			makeIcon("Lindsay Airport<br>",[44.364022,-78.7827989],"<br>CNFA !code name did not come up","pilots"),
-			makeIcon("Oshawa Airport<br>",[43.9245641,-78.8967467],"<br>CYOO","pilots"),
-			makeIcon("Kingston Airport<br>",[44.2252428,-76.596066],"<br>CYGK","pilots"),
-			makeIcon("Driving Starting Point<br>",[43.8783451,-79.4151566],"Bayview Secondary School,<br>10077 Bayview Avenue,<br>Richmond Hill ON<br>L4C 2L4","drivers")
-			]
 		map_all_locations = locations;
 		if(!phone){
 			makeLegend(locations);
@@ -433,7 +461,7 @@ function makeIcon(title,location,description,id){
 	});
 
 	var image = {
-		url:'/assets/icons/icon-loc-'+id+'.png',
+		url:staticLink+'assets/icons/icon-loc-'+id+'.png',
 		size: new google.maps.Size(26, 47.5),
 		origin: new google.maps.Point(0,0),
 		anchor: new google.maps.Point(26,47.5),
@@ -505,7 +533,7 @@ function scrollFromCarocel(direction){
 	if(scrolling){
 		return false;
 	}
-	if(direction == "down"){
+	if(direction == "down" && $(window).scrollTop() < 500){
 		scrolling = true;
 		$('html, body').animate({
 			scrollTop: $("#about").offset().top
@@ -540,13 +568,13 @@ function nav_blue_yellow(dir){
 }
 
 function setMarginTop(){
-	$("#spacer").css({"margin-top":$(window).height()});
+	$("#spacer").css({"margin-top":$(window).outerHeight()});
+	$("body, html, #carousel").height($(window).outerHeight());
 }
 
 function stopScrollIfScrolling(event){
 	if(scrolling){
 		event.preventDefault();
-		console.log("stoppppiinngng");
 		return false;
 	}
 }
@@ -557,7 +585,7 @@ function animateScroll(element){
 	}
 	if(element){
 		scrolling = true;
-		$('html, body').animate({scrollTop :  $(element).offset().top},500,function(){
+		$('html, body, #scroller-container').animate({scrollTop :  $(element).offset().top+$("#scroller-container").scrollTop()},500,function(){
 			scrolling = false;
 		});
 	} else {
@@ -579,10 +607,6 @@ function setURL(location){
 
 function setUpMap(){
 
-	/*old map SETUP*/
-	// var map = $("#map-loading")
-	// map.children()[0].innerHTML = "Tap to load map";
-	// map.click(loadMapOnClick);
 }
 function loadMapOnClick(){
 	var el = $(this).children()[0];

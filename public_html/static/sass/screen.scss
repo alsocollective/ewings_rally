@@ -123,6 +123,11 @@
 	#nav-button-container > div:nth-child(1){
 		padding-top: 7px;
 	}
+	img {
+		width: 30px;
+		height: 30px;
+		margin-left: 0.5em;
+	}
 	.line{
 		border-bottom: solid black 4px;
 		height: 6px;
@@ -149,6 +154,44 @@
 		background-color: $orange;
 		-webkit-transform: skewX(-45deg);
 		transform: skewX(-45deg);
+	}
+}
+
+#social-media-buttons{
+	left: inherit;
+	right: 10px;
+	position: fixed;
+	z-index: 100;
+	height: 50px;
+	top: 2em;
+	#nav-button-container{
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	a{
+		display: inline-block;
+	}
+	img {
+		width: 1.7em;
+		height: 1.7em;
+		margin-left: 0.5em;
+	}
+	.donate-button{
+		position: static;
+		vertical-align: top;
+		margin-left: 0.5em;
+		border-width: 2px;
+		text-transform: uppercase;
+		font-size: 0.9em;
+		font-weight: bold;
+		padding: 0.3em 0.4em;
+	}
+	.donate-button:hover{
+		border-color: $yellow;
+		background: $yellow;
+		background-color: $yellow;
+		color: #000;
 	}
 }
 #nav-button:hover{
@@ -192,7 +235,8 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			opacity: 0;
+			opacity: 0; filter:alpha(opacity=0);
+			filter:alpha(opacity=0);
 			width: 100%;
 			height: 100%;
 			@include vendorize(transition,opacity 1s);
@@ -200,7 +244,7 @@
 		.image-background{
 			width: 100%;
 			height: 100%;
-			background-position: center;
+			background-position: top;
 			background-repeat: no-repeat;
 			@include vendorize(background-size, cover);
 		}
@@ -208,36 +252,15 @@
 	}
 		// @include vendorize(transition,left 1.5s cubic-bezier(1,0,1,0))
 
-	// div:nth-child(1) .image-background{
-	// 	background-image: url("/assets/img/landing-1.jpg");
-	// }
-	// div:nth-child(2) .image-background{
-	// 	background-image: url("/assets/img/landing-2.jpg");
-	// }
-	// div:nth-child(3) .image-background{
-	// 	background-image: url("/assets/img/landing-3-tony.jpg");
-	// }
-	// div:nth-child(4) .image-background{
-	// 	background-image: url("/assets/img/landing-4.jpg");
-	// }
-	// div:nth-child(5) .image-background{
-	// 	background-image: url("/assets/img/landing-5-reid.jpg");
-	// }
-	// div:nth-child(6) .image-background{
-	// 	background-image: url("/assets/img/landing-6-anna.jpg");
-	// }
-	// div:nth-child(7) .image-background{
-	// 	background-image: url("/assets/img/landing-7-sierra.jpg");
-	// }
 	.slide.off{
 		display: none;
 	}
 	.slide.heighlight{
-		opacity: 1;
+		opacity: 1; filter:alpha(opacity=1);
 		z-index: 1;
 	}
 	.slide.text .slide-text{
-		opacity: 1;
+		opacity: 1; filter:alpha(opacity=1);
 	}
 
 	#logo-slide{
@@ -338,10 +361,10 @@
 			margin-top: 300px;
 			display: inline-block;
 			margin-right: 5em;
-			background-position: center;
+			background-position: top;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
-			background-image: url("/assets/img/about-prt.jpg");
+			// background-image: url("/assets/img/about-prt.jpg");
 			// background-size: 40%;
 			width: 15em;
 			height: 15em;
@@ -394,7 +417,8 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			@include vendorize(background-size,cover);
-			background-image: url("/assets/img/about-bg-1.jpg");
+			background-color: $yellow;
+			// background-image: url("/assets/img/about-bg-1.jpg");
 		}
 		#background-2{
 			-webkit-transform: skewX(-45deg);
@@ -413,29 +437,36 @@
 				background-position: center;
 				background-repeat: no-repeat;
 				@include vendorize(background-size,cover);
-				background-image: url("/assets/img/about-bg-2.jpg");
+				// background-image: url("/assets/img/about-bg-2.jpg");
 				-webkit-transform: skewX(45deg);
 				transform: skewX(45deg);
 			}
 		}
 	}
 
-	#dimond{
+	#dimond-container{
 		position: absolute;
 		top: -50px;
-		left: calc(50% - 50px);
+		width: 100%;
+		height: 100px;
+		text-align: center;
+		z-index: 99;
+	}
+	#dimond{
+		display: inline-block;
 		width: 100px;
 		height: 100px;
 		background: $yellow;
 		background-color: $yellow;
 		@include rotate(45deg);
 		@include origin(50% 50%);
+		text-align: left;
 		> div{
 			width: 70%;
 			height: 70%;
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url("/assets/icons/down-arrow-black.png");
+			// background-image: url("/assets/icons/down-arrow-black.png");
 			background-size: 40px;
 			@include rotate(-45deg);
 			@include origin(50% 50%);
@@ -456,8 +487,10 @@
 		min-height: 100%;
 		z-index: 1;
 		svg{
+			display: inline-block;
 			fill:#fff;
-			max-height: 12%;
+			//max-height: 12%;
+			height: 150px;
 			max-width: 150px;
 			padding-bottom: 0.75em;
 		}
@@ -532,7 +565,13 @@
 		p:last-child{
 			padding-bottom: 150px;
 		}
+		a{
+			font-weight: bold;
+		}
 	}
+	// guest is blue
+	// driver yellow or orange
+
 
 	img{
 		width: 33.33333%;
@@ -557,6 +596,16 @@
 	}
 }
 
+#guests{
+	a:hover{
+		color: $blue;
+	}
+}
+#drivers{
+	a:hover{
+		color: $yellow;
+	}
+}
 
 #registration{
 	min-height: 100%;
@@ -566,7 +615,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	@include vendorize(background-size,cover);
-	background-image: url("/assets/img/registration-1.jpg");
+	// background-image: url("/assets/img/registration-1.jpg");
 
 	.title{
 		@extend .titles;
@@ -575,6 +624,17 @@
 	}
 	h2{
 		@extend .third-titles;
+		a{
+			text-decoration: underline;
+		}
+	}
+	#paypal{
+		h2:hover{
+			border-color: $yellow;
+			background-color: $yellow;
+			background: $yellow;
+			color: #000;
+		}
 	}
 	> div{
 		margin-top: 6em;
@@ -623,10 +683,11 @@
 		left: 0;
 		background-color: #fff;
 		opacity: 1;
+		filter:alpha(opacity=1);
 		background-position: center;
 		background-repeat: no-repeat;
 		@include vendorize(background-size,cover);
-		background-image: url("/assets/img/map-loading.jpg");
+		// background-image: url("/assets/img/map-loading.jpg");
 		> div {
 			color: #fff;
 			@include bold();
@@ -657,11 +718,11 @@
 			text-align: right;
 			a{
 				display: inline-block;
-				padding: 1em;
-				background-color: #fff;
-				color: inherit;
 				text-decoration: inherit;
 				color: #fff;
+				padding: 1em 5% 1em 0%;
+				width: 105%;
+				margin-left: -10%;
 			}
 			a:hover{
 				background-color: #ccc;
@@ -677,14 +738,16 @@
 			background-color: $blue;
 		}
 		#controll-pannel{
-			width: 100%;
+			width: 110%;
 			text-align: center;
+			margin-left: -10%;
 			a{
 				display: inline-block;
 				padding: 1em 0;
 				width: 50%;
 				height: 100%;
 				background-color: $blue;
+				margin-left: 0%;
 			}
 			a:hover{
 				background-color: #000;
@@ -719,24 +782,12 @@
 		display: none;
 		margin: 0 auto;
 	}
-	
-	#platinum{
-		color: #ddd;
-	}
-	#gold{
-		color: #ffd95f;
-	}
-	#silver{
-		color: #777;
-	}
-	#bronze{
-		color: #d8741a;
-	}
 
 	h3{
 		@extend .body-type; //for the type size
 		text-transform: uppercase;
 		font-weight: bolder;
+		font-size: 1.8em;
 		padding: 1em 0;
 	}
 
@@ -847,12 +898,33 @@
 #loading-screen{
 	z-index: 9999999;
 	position: fixed;
+	display: table;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-position: center;
+	background-position: top;
 	background-repeat: no-repeat;
 	@include vendorize(background-size, cover);
-	background-image: url("/assets/img/landing-2.jpg");
+	background: $yellow;
+	background-color: $yellow;
+	>div{
+		display: table-cell;
+		font-size: 1.7em;
+		text-align: left;
+		line-height: 1.2em;
+		color: #fff;
+		font-weight: bolder;
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		@include vendorize(text-shadow, 0px 0px 5px rgba(0,0,0,0.5));
+		@include vendorize(text-shadow, 0px 0px 5px #000);
+		img{
+			width: 50%;
+			height: auto;
+		}
+	}
 }
+
+

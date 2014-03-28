@@ -106,12 +106,18 @@ a{
 	font-weight: normal;
 }
 .third-titles{
+
 	padding: 0.4em 1em 0.3em 1em;
-	border: solid #fff 1px;
 	display: inline-block;
 	margin: 1em 0 2em 0;
 	text-transform: uppercase;
-	font-weight: normal;
+	background: #fff;
+	color: $blue;
+	font-weight: bold;
+	line-height: 1.2em;
+	a{
+		color: $blue;
+	}
 }
 .body-type{
 	font-size: 1em;
@@ -122,7 +128,12 @@ a{
 	line-height:1.35;
 	overflow:hidden;
 	white-space:nowrap;
+	background-color: #fff;
 }
+// #map >div >div > div *{
+// 	background-color: #f0f;
+// }
+
 
 
 
@@ -144,11 +155,38 @@ a{
 
 
 
-#djDebug{
+body #djDebug{
+	display: none !important;
 	height: 100%;
 	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 9999999999;
 	width: 100%;
+}
+
+
+#sponsors{
+	#platinum{
+		color: #ddd;
+	}
+	#gold{
+		color: #ffd95f;
+	}
+	#silver{
+		color: #777;
+	}
+	#bronze{
+		color: #d8741a;
+	}
+}
+
+.donate-button{
+	color: #fff;
+	text-decoration: none;
+	border: 3px solid #fff;
+	position: absolute;
+	right: -60px;
+	top: 0px;
+	padding: 0.2em 0.3em 0.2em 0.3em;
 }

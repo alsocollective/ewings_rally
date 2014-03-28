@@ -7,15 +7,10 @@
 	<meta charset="utf-8"/>
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
 	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0,user-scalable=no" name="viewport"/>
-	<script type="text/javascript" src="{% static "js/lib/jquery.js"%}"></script>
-	<script type="text/javascript" src="{% static "js/lib/waypoints.min.js"%}"></script>
+	<script type="text/javascript" src="{% static "js/min/jquery.waypoint.min.js"%}"></script>
 	<!-- only desktop -->
 	{% if desktop%}
-		<script type="text/javascript" src="{% static "js/lib/skrollr.js"%}"></script>
-		<script type="text/javascript" src="{% static "js/lib/jquery.scrollstop.js"%}"></script>
-		<script type="text/javascript" src="{% static "js/lib/jquery.easing.min.js"%}"></script>
-		<script type="text/javascript" src="{% static "js/lib/jquery.scrollsnap.js"%}"></script>
-		<script type="text/javascript" src="{% static "js/lib/jquery.mousewheel.js"%}"></script>
+		<script type="text/javascript" src="{% static "js/min/desktop.min.js"%}"></script>
 		<link rel="stylesheet" type="text/css" href="{% static "stylesheets/screen.css"%}">
 	{% else %}
 	<!-- only Phone -->
@@ -357,7 +352,7 @@
 	{% endfor %}
 	]
 </script>
-<script type="text/javascript" src="{% static "js/main.js"%}"></script>
+<script type="text/javascript" src="{% static "js/min/main.min.js"%}"></script>
 </body>
 </html>
 
