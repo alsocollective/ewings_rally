@@ -1,7 +1,12 @@
+var canclescrller = navigator.userAgent.toLowerCase().indexOf('chrome') > -1 && navigator.appVersion.indexOf("Win")!=-1;
+
+
 if(deskTop && skrollr){
-	skrollr.init({
-		forceHeight: false
-	});
+	if(!canclescrller){
+		skrollr.init({
+			forceHeight: false
+		});
+	}
 }
 
 var carousel_sliding=false,
