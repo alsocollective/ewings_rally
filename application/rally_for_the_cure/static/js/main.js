@@ -6,6 +6,10 @@ if(deskTop && skrollr){
 		skrollr.init({
 			forceHeight: false
 		});
+	} else {
+		document.getElementById("background-image-container").style.overflow = "visible";
+		var el = document.getElementById("background-2");
+		el.parentNode.removeChild(el);
 	}
 }
 
