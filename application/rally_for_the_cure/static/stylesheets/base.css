@@ -133,20 +133,26 @@ a {
 /* line 108, ../sass/base.scss */
 .third-titles {
   padding: 0.4em 1em 0.3em 1em;
-  border: solid #fff 1px;
   display: inline-block;
   margin: 1em 0 2em 0;
   text-transform: uppercase;
-  font-weight: normal;
+  background: #fff;
+  color: #2b2b57;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+/* line 118, ../sass/base.scss */
+.third-titles a {
+  color: #2b2b57;
 }
 
-/* line 116, ../sass/base.scss */
+/* line 122, ../sass/base.scss */
 .body-type {
   font-size: 1em;
   line-height: 1.2em;
 }
 
-/* line 121, ../sass/base.scss */
+/* line 127, ../sass/base.scss */
 .info-box {
   line-height: 1.35;
   overflow: hidden;
@@ -155,58 +161,58 @@ a {
 }
 
 @-webkit-keyframes fadeOut {
-  /* line 137, ../sass/base.scss */
+  /* line 143, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 141, ../sass/base.scss */
+  /* line 147, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-moz-keyframes fadeOut {
-  /* line 137, ../sass/base.scss */
+  /* line 143, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 141, ../sass/base.scss */
+  /* line 147, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @-ms-keyframes fadeOut {
-  /* line 137, ../sass/base.scss */
+  /* line 143, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 141, ../sass/base.scss */
+  /* line 147, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
 @keyframes fadeOut {
-  /* line 137, ../sass/base.scss */
+  /* line 143, ../sass/base.scss */
   100% {
     display: inline;
     opacity: 0;
   }
 
-  /* line 141, ../sass/base.scss */
+  /* line 147, ../sass/base.scss */
   0% {
     opacity: 1;
   }
 }
 
-/* line 152, ../sass/base.scss */
+/* line 158, ../sass/base.scss */
 body #djDebug {
   display: none !important;
   height: 100%;
@@ -217,24 +223,24 @@ body #djDebug {
   width: 100%;
 }
 
-/* line 164, ../sass/base.scss */
+/* line 170, ../sass/base.scss */
 #sponsors #platinum {
   color: #ddd;
 }
-/* line 167, ../sass/base.scss */
+/* line 173, ../sass/base.scss */
 #sponsors #gold {
   color: #ffd95f;
 }
-/* line 170, ../sass/base.scss */
+/* line 176, ../sass/base.scss */
 #sponsors #silver {
   color: #777;
 }
-/* line 173, ../sass/base.scss */
+/* line 179, ../sass/base.scss */
 #sponsors #bronze {
   color: #d8741a;
 }
 
-/* line 178, ../sass/base.scss */
+/* line 184, ../sass/base.scss */
 .donate-button {
   color: #fff;
   text-decoration: none;

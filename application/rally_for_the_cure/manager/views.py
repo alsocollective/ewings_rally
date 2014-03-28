@@ -8,7 +8,7 @@ def home(request):
 
 	query = Content.objects.all()
 	content = query[0]
-	slides = query[0].slides.all()
+	slides = query[0].slides.all().order_by('order')
 	map_locations = query[0].map_locations.all()
 	sponsors = query[0].sponsors.all()
 

@@ -147,7 +147,7 @@ body{
 		}
 		.heighlight{
 			z-index: 1 !important;
-			opacity: 1;
+			opacity: 1; filter:alpha(opacity=1);
 		}
 		.text .slide-text{
 			opacity: 1 !important;
@@ -232,8 +232,8 @@ body{
 				line-height: 1.2em;
 				color: #fff;
 				font-weight: bolder;
-				@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
-				@include vendorize(text-shadow, 0px 0px 10px #000);
+				@include vendorize(text-shadow, 0px 0px 5px rgba(0,0,0,0.5));
+				@include vendorize(text-shadow, 0px 0px 5px #000);
 			}
 			@include p-l(l) {
 				.quote{
@@ -424,6 +424,10 @@ body{
 			}
 
 		}
+		a{
+			font-weight: bold;
+			text-decoration: underline;
+		}
 		// background-image: url("/assets/img/half.svg");
 	}
 	.background-coloums{
@@ -437,6 +441,16 @@ body{
 	}
 	#drivers{
 		background-color: $blue;
+	}
+}
+#guests{
+	a:hover{
+		color: $blue;
+	}
+}
+#drivers{
+	a:hover{
+		color: $yellow;
 	}
 }
 
@@ -546,12 +560,12 @@ body{
 	// 	@include vendorize(background-size,cover);
 	// 	background-image: url("/assets/img/map-loading.jpg");
 	// 	> div{
-	// 		opacity: 1;
+	// 		opacity: 1; filter:alpha(opacity=1);
 	// 		color: #fff;
 	// 		@include bold();
 	// 		font-size: 3em;
-	// 		@include vendorize(text-shadow, 0px 0px 10px rgba(0,0,0,0.5));
-	// 		@include vendorize(text-shadow, 0px 0px 10px #000);
+	// 		@include vendorize(text-shadow, 0px 0px 5px rgba(0,0,0,0.5));
+	// 		@include vendorize(text-shadow, 0px 0px 5px #000);
 	// 		display: table-cell;
 	// 		text-align: center;
 	// 		vertical-align: middle;
@@ -559,7 +573,7 @@ body{
 	// 	}
 	// }
 	// #map-loading .clicked{
-	// 	opacity: 1;
+	// 	opacity: 1; filter:alpha(opacity=1);
 	// }
 	// .off{
 	// 	display: none !important;

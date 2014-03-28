@@ -81,15 +81,14 @@
 </div>
 
 
-
+	<script type="text/javascript">
+		var imagesToPreLoad = [{% for slide in slides %}"{{ MEDIA_URL }}{{slide.background_image}}"{% if not forloop.last%},{% endif %}{% endfor %}]
+	</script>
 	<div id="carousel" class="section">
 		<div id="carousel-nav">
 			{% for slide in slides %}
 				<div class="slide-nav {% if forloop.first %}active{% endif %}" id="{{forloop.counter}}"></div>
 			{% endfor %}
-			<script type="text/javascript">
-				var imagesToPreLoad = [{% for slide in slides %}"{{ MEDIA_URL }}{{slide.background_image}}"{% if not forloop.last%},{% endif %}{% endfor %}]
-			</script>
 		</div>
 		{% for slide in slides %}
 		<div class="slide {% if forloop.first %}heighlight{% else %} off{% endif %}">
@@ -248,17 +247,23 @@
 			<div id="docs">
 				<h2>Required Documents</h2><br>
 				<div>
+					<a href="{{ MEDIA_URL }}{{data.waiver_form}}" target="Waiver">
 					<img src="{% static "assets/icons/ic-waiver.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}{{data.waiver_form}}" target="Waiver">Download</a></h3>
+					<h3>Download</h3>
 					<p>Waiver Form</p>
+					</a>
 				</div><div>
+					<a href="{{ MEDIA_URL }}{{data.pledge_form}}" target="Pledge">
 					<img src="{% static "assets/icons/ic-pledge.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}{{data.pledge_form}}" target="Pledge">Download</a></h3>
+					<h3>Download</h3>
 					<p>Pledge Form</p>
+					</a>
 				</div><div>
+					<a href="{{ MEDIA_URL }}{{data.registration_form}}" target="Registration">
 					<img src="{% static "assets/icons/ic-registration.png"%}" width="80px">
-					<h3><a href="{{ MEDIA_URL }}{{data.registration_form}}" target="Registration">Download</a></h3>
+					<h3>Download</h3>
 					<p>Registration Form</p>
+					</a>
 				</div>
 			</div>
 		</div>

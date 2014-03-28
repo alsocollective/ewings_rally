@@ -11,7 +11,8 @@ var carousel_sliding=false,
 	showing_nav=false,
 	slideMenu = false,
 	winWidth = 0,
-	sldNum = 1;
+	sldNum = 1,
+	slideCountDown = false;
 
 checkPhoneHeight();
 
@@ -124,7 +125,10 @@ function menu_nav_click(event){
 		// setURL(link);
 		animateScroll("#"+link[link.length-1]);
 	// }
-	toggleOut(event);
+
+	$("#nav").removeClass('slideout');
+	setTimeout(toggleTall,1000);
+
 	return false;
 }
 function hideNavMenue(){
@@ -170,17 +174,35 @@ function navSlideClick(e){
 	$(this).addClass('active');
 	var ElNum = this.id;
 	changeSlide($($("#carousel .heighlight")[0]),$($("#carousel").children()[parseInt(ElNum)]))
+	resetCarouselAuto();
 }
 
 // Temporary Timed Carousel
+// var timeintoProgram = 0;
 function carouselAuto(){
-	setTimeout(
-		function(){
-			$("#carousel .heighlight").click();
-			carouselAuto();
-		},
-		10000
-	);
+	// setInterval(function(){
+	// 	++timeintoProgram;
+	// 	console.log(timeintoProgram);
+	// },1000);
+	var time = 6000;
+	if(checkIfLong()){
+		time = 30000;
+	}
+	slideCountDown = setTimeout(clickHeighlightCarosel,time);
+}
+function resetCarouselAuto(){
+	var time = 6000;
+	if(checkIfLong()){
+		time = 30000;
+	}
+	clearTimeout(slideCountDown);
+	slideCountDown = setTimeout(clickHeighlightCarosel,time);
+}
+function clickHeighlightCarosel(){
+	$("#carousel .heighlight").click();
+}
+function checkIfLong(){
+	return !$("#carousel .heighlight img").length
 }
 
 // control function
@@ -189,6 +211,7 @@ function newSlide(e){
 	nextSlide = getNextSlide(curSlide);
 	nextCaroselNav();
 	changeSlide(curSlide,nextSlide);
+	resetCarouselAuto();
 }
 
 function nextCaroselNav(){
