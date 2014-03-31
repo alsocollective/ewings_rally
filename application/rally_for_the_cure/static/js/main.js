@@ -30,21 +30,21 @@ if(svgToPng){
 	var parent = svg.parentNode;
 	var image = new Image();
 	svg.style.display = "none";
-	image.src = "/static/assets/icons/ic-people.png";
+	image.src = "http://also-static.com/rallyforthecure/static/assets/icons/ic-people.png";
 	parent.insertBefore(image,svg);
 
 	svg = $("#pilots svg")[0];
 	parent = svg.parentNode;
 	image = new Image();
 	svg.style.display = "none";
-	image.src = "/static/assets/icons/ic-plane.png";
+	image.src = "http://also-static.com/rallyforthecure/static/assets/icons/ic-plane.png";
 	parent.insertBefore(image,svg);
 
 	svg = $("#drivers svg")[0];
 	parent = svg.parentNode;
 	image = new Image();
 	svg.style.display = "none";
-	image.src = "/static/assets/icons/ic-car.png";
+	image.src = "http://also-static.com/rallyforthecure/static/assets/icons/ic-car.png";
 	parent.insertBefore(image,svg);
 }
 
