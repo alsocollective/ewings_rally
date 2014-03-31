@@ -1,5 +1,52 @@
+/*
+       d8888  .d8888b.  888       .d88888b.         .d8888b.           888 888                   888    d8b
+      d88888 d88P  Y88b 888      d88P" "Y88b       d88P  Y88b          888 888                   888    Y8P
+     d88P888 Y88b.      888      888     888       888    888          888 888                   888
+    d88P 888  "Y888b.   888      888     888       888         .d88b.  888 888  .d88b.   .d8888b 888888 888 888  888  .d88b.
+   d88P  888     "Y88b. 888      888     888       888        d88""88b 888 888 d8P  Y8b d88P"    888    888 888  888 d8P  Y8b
+  d88P   888       "888 888      888     888       888    888 888  888 888 888 88888888 888      888    888 Y88  88P 88888888
+ d8888888888 Y88b  d88P 888      Y88b. .d88P       Y88b  d88P Y88..88P 888 888 Y8b.     Y88b.    Y88b.  888  Y8bd8P  Y8b.
+d88P     888  "Y8888P"  88888888  "Y88888P"         "Y8888P"   "Y88P"  888 888  "Y8888   "Y8888P  "Y888 888   Y88P    "Y8888
+*/
+
 var canclescrller = navigator.userAgent.toLowerCase().indexOf('chrome') > -1 && navigator.appVersion.indexOf("Win")!=-1;
 
+navigator.sayswho= (function(){
+    var ua= navigator.userAgent||navigator.vendor||window.opera, tem, 
+    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*([\d\.]+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+(\.\d+)?)/g.exec(ua) || [];
+        return 'IE '+(tem[1] || '');
+    }
+    M= M[2]? [M[1], M[2]]:[navigator.appName, navigator.appVersion, '-?'];
+    if((tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+    return M;
+})();
+
+var svgToPng = (navigator.sayswho[0]=="Safari"&&(parseInt(navigator.sayswho[2][0])<6))
+
+if(svgToPng){
+	var svg = $("#guests svg")[0];
+	var parent = svg.parentNode;
+	var image = new Image();
+	svg.style.display = "none";
+	image.src = "/static/assets/icons/ic-people.png";
+	parent.insertBefore(image,svg);
+
+	svg = $("#pilots svg")[0];
+	parent = svg.parentNode;
+	image = new Image();
+	svg.style.display = "none";
+	image.src = "/static/assets/icons/ic-plane.png";
+	parent.insertBefore(image,svg);
+
+	svg = $("#drivers svg")[0];
+	parent = svg.parentNode;
+	image = new Image();
+	svg.style.display = "none";
+	image.src = "/static/assets/icons/ic-car.png";
+	parent.insertBefore(image,svg);
+}
 
 if(deskTop && skrollr){
 	if(!canclescrller){
