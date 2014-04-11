@@ -23,7 +23,18 @@ navigator.sayswho= (function(){
     return M;
 })();
 
-var svgToPng = (navigator.sayswho[0]=="Safari"&&(parseInt(navigator.sayswho[2][0])<6))
+var svgToPng = (navigator.sayswho[0]=="Safari"&&(getVersion(6)))
+
+function getVersion(tester){
+
+	if(navigator.sayswho.length <= 2) return false;
+	if(tester){
+		return parseInt(navigator.sayswho[2][0]) > tester;
+	}
+	return false;
+}
+
+
 
 if(svgToPng){
 	var svg = $("#guests svg")[0];
@@ -48,6 +59,7 @@ if(svgToPng){
 	parent.insertBefore(image,svg);
 }
 
+
 if(deskTop && skrollr){
 	if(!canclescrller){
 		skrollr.init({
@@ -59,6 +71,7 @@ if(deskTop && skrollr){
 		el.parentNode.removeChild(el);
 	}
 }
+
 
 var carousel_sliding=false,
 	carousel_conatiner=false,
@@ -72,10 +85,13 @@ var carousel_sliding=false,
 
 checkPhoneHeight();
 
+
 $(window).resize(setMarginTop);
 setMarginTop();
 
 $(document).ready(function() {
+
+
 	carousel_conatiner = $("#carousel");
 
 	$(".slide").click(newSlide);
@@ -122,7 +138,6 @@ $(document).ready(function() {
 		setUpMap();
 		moveContact();
 	}
-
 
 });
 
