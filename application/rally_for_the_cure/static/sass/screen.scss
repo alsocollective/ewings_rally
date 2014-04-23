@@ -738,13 +738,14 @@
 			background-color: $blue;
 		}
 		#controll-pannel{
-			width: 110%;
+			width: 112%;
 			text-align: center;
 			margin-left: -10%;
 			a{
 				display: inline-block;
 				padding: 1em 0;
 				width: 50%;
+				width: calc(50% - 1px);
 				height: 100%;
 				background-color: $blue;
 				margin-left: 0%;
@@ -793,9 +794,8 @@
 
 	img{
 		vertical-align: top;
-		max-height: 60px;
 		width: auto;
-		padding: 0.2em 0.9em;
+		padding: 2em 1.2em;
 		vertical-align: middle;
 	}
 
@@ -906,7 +906,6 @@
 	background-position: top;
 	background-repeat: no-repeat;
 	@include vendorize(background-size, cover);
-	background: $yellow;
 	background-color: $yellow;
 	>div{
 		display: table-cell;
